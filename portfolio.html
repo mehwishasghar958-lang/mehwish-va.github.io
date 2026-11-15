@@ -1,548 +1,425 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mehwish Asghar | Virtual Assistant Portfolio</title>
-
-    <meta name="description"
-        content="Explore the portfolio of Mehwish Asghar, a Virtual Assistant providing administrative support, data management, CRM organization, Canva design, and content assistance.">
-
+    <title>Portfolio | Mehwish - Professional Virtual Assistant</title>
+    <meta name="description" content="Explore the portfolio of Mehwish Asghar, a Virtual Assistant providing administrative support, data management, CRM organization, Canva design, and content assistance.">
     <meta name="author" content="Mehwish Asghar">
-</head>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- RESET & BASE STYLES --- */
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; line-height: 1.6; color: var(--text-dark); background: var(--white); }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        img, video { max-width: 100%; display: block; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 80px 0; }
+        .section-light { background-color: var(--bg-light); }
+        .text-center { text-align: center; }
+
+        /* --- TYPOGRAPHY --- */
+        .eyebrow { text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+        h1 { font-size: 3rem; font-weight: 700; line-height: 1.2; margin-bottom: 15px; }
+        h2 { font-size: 2rem; font-weight: 700; margin-bottom: 20px; }
+        h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 10px; }
+        p { color: var(--text-light); margin-bottom: 15px; }
+
+        /* --- BUTTONS --- */
+        .button { display: inline-block; padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; border: none; }
+        .button-primary { background: var(--primary); color: var(--white); }
+        .button-primary:hover { background: var(--primary-hover); }
+        .button-secondary { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+        .button-secondary:hover { background: var(--bg-light); }
+
+        /* --- NAVIGATION --- */
+        .navbar { position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 15px 0; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--text-dark); }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-dark); }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a.active { color: var(--primary); font-weight: 700; }
+        .menu-button { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+
+        /* --- PAGE HERO --- */
+        .page-hero { padding: 80px 0 60px; text-align: center; }
+        .page-hero .eyebrow { margin-bottom: 15px; }
+        .page-hero p { max-width: 700px; margin: 0 auto 15px; font-size: 1.1rem; }
+
+        /* --- SECTION HEADING --- */
+        .section-heading { text-align: center; max-width: 700px; margin: 0 auto 50px; }
+        .section-heading p { margin-bottom: 0; }
+
+        /* --- PROJECT CARDS --- */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .project-card {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); border-color: var(--primary); }
+        .project-media { position: relative; background: var(--bg-light); }
+        .project-media img, .project-media video { width: 100%; height: 220px; object-fit: cover; }
+        .project-media figcaption {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(30,41,59,0.85), transparent);
+            color: var(--white); font-size: 0.8rem; padding: 15px 15px 10px;
+        }
+        .project-body { padding: 25px; display: flex; flex-direction: column; flex: 1; }
+        .project-body h3 { margin-bottom: 12px; }
+        .project-body p { font-size: 0.95rem; }
+        .skills-tag { display: inline-block; background: var(--bg-light); color: var(--primary); font-size: 0.8rem; font-weight: 600; padding: 4px 10px; border-radius: 20px; margin: 2px 4px 2px 0; }
+        .project-skills { margin-top: auto; padding-top: 15px; border-top: 1px solid var(--border); }
+        .project-skills strong { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); margin-bottom: 8px; }
+
+        /* --- SERVICE LIST --- */
+        .service-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .service-item { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px 25px; display: flex; align-items: center; gap: 15px; transition: 0.3s; }
+        .service-item:hover { border-color: var(--primary); }
+        .service-item .check { color: var(--primary); font-weight: 700; font-size: 1.2rem; }
+        .service-item p { margin: 0; font-weight: 500; color: var(--text-dark); }
+
+        /* --- CONTACT CTA --- */
+        .cta-box { background: var(--text-dark); border-radius: 16px; padding: 50px; text-align: center; color: var(--white); }
+        .cta-box h2 { color: var(--white); }
+        .cta-box p { color: #cbd5e1; max-width: 600px; margin: 0 auto 25px; }
+        .cta-box .button-primary { background: var(--primary); }
+        .cta-box .button-primary:hover { background: var(--primary-hover); }
+        .cta-box .button-secondary { color: var(--white); border-color: var(--white); }
+        .cta-box .button-secondary:hover { background: rgba(255,255,255,0.1); }
+        .cta-actions { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+
+        /* --- FOOTER --- */
+        .footer { background: var(--text-dark); color: var(--white); padding: 60px 0 30px; }
+        .footer-container { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 30px; }
+        .footer .logo { color: var(--white); margin-bottom: 10px; display: block; }
+        .footer p { color: #94a3b8; font-size: 0.9rem; }
+        .footer-links { display: flex; gap: 25px; }
+        .footer-links a { color: #cbd5e1; font-size: 0.95rem; }
+        .footer-links a:hover { color: var(--white); }
+        .copyright { width: 100%; text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #334155; color: #64748b; font-size: 0.85rem; }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.6rem; }
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 20px; border-bottom: 1px solid var(--border); gap: 15px; }
+            .nav-links.open { display: flex; }
+            .menu-button { display: block; }
+            .project-grid { grid-template-columns: 1fr; }
+            .cta-box { padding: 35px 20px; }
+            .footer-container { flex-direction: column; text-align: center; align-items: center; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-
-        <h1>Mehwish Asghar</h1>
-
-        <p>Professional Virtual Assistant</p>
-
-        <nav aria-label="Main navigation">
-
-            <a href="index.html">Home</a> |
-            <a href="index.html#about">About</a> |
-            <a href="index.html#services">Services</a> |
-            <a href="portfolio.html">Portfolio</a> |
-            <a href="index.html#tools">Tools</a> |
-            <a href="Mehwish-Asghar-CV.pdf" download>Resume</a> |
-            <a href="index.html#contact">Contact</a>
-
-        </nav>
-
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Mehwish</a>
+            <nav class="nav-links" id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="portfolio.html" class="active">Portfolio</a>
+                <a href="index.html#tools">Tools</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="mailto:mehwishasghar958@gmail.com" class="button button-primary">Hire Me</a>
+            </nav>
+            <button class="menu-button" onclick="document.getElementById('main-nav').classList.toggle('open')">☰</button>
+        </div>
     </header>
 
-
     <main>
-
-        <!-- INTRODUCTION -->
-        <section id="home">
-
-            <h2>My Portfolio</h2>
-
-            <p>
-                Welcome to my portfolio. Here you can explore examples
-                of my work, skills, and projects as a Virtual Assistant.
-            </p>
-
-            <p>
-                I help digital creators, entrepreneurs, and small
-                businesses manage their daily tasks, organize their
-                operations, and maintain professional workflows.
-            </p>
-
-            <a href="index.html">Back to Homepage</a>
-
+        <!-- PAGE HERO -->
+        <section class="page-hero">
+            <div class="container">
+                <p class="eyebrow">MY PORTFOLIO</p>
+                <h1>Work That Keeps Businesses Organized</h1>
+                <p>
+                    Welcome to my portfolio. Here you can explore examples of my work, skills, and projects as a Virtual Assistant. I help digital creators, entrepreneurs, and small businesses manage daily tasks, organize operations, and maintain professional workflows.
+                </p>
+                <a href="index.html" class="button button-secondary">Back to Homepage</a>
+            </div>
         </section>
 
+        <!-- PROJECTS SECTION -->
+        <section id="portfolio" class="section section-light">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">SAMPLE PROJECTS</p>
+                    <h2>Projects Demonstrating My Skills</h2>
+                    <p>Explore the following sample projects demonstrating different Virtual Assistant skills.</p>
+                </div>
 
-        <!-- ABOUT -->
-        <section id="about">
+                <div class="project-grid">
 
-            <h2>About My Work</h2>
+                    <!-- PROJECT 1 -->
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <img src="project-01-inbox-management.jpg" alt="Email inbox organization project" loading="lazy">
+                            <figcaption>Email organization and inbox management</figcaption>
+                        </figure>
+                        <div class="project-body">
+                            <h3>Email & Inbox Management</h3>
+                            <p>Organizing emails, creating folders and labels, sorting messages, and maintaining a clean inbox for efficient communication.</p>
+                            <div class="project-skills">
+                                <strong>Skills</strong>
+                                <span class="skills-tag">Gmail</span>
+                                <span class="skills-tag">Email Management</span>
+                                <span class="skills-tag">Organization</span>
+                            </div>
+                        </div>
+                    </article>
 
-            <p>
-                I am a detail-oriented Virtual Assistant based in Pakistan.
-                My work focuses on administrative support, email management,
-                customer records, data organization, content assistance,
-                and digital productivity.
-            </p>
+                    <!-- PROJECT 2 -->
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <img src="project-02-calendar-management.jpg" alt="Calendar scheduling project" loading="lazy">
+                            <figcaption>Calendar and appointment scheduling</figcaption>
+                        </figure>
+                        <div class="project-body">
+                            <h3>Calendar Management</h3>
+                            <p>Creating organized schedules, managing appointments, tracking deadlines, and planning daily activities.</p>
+                            <div class="project-skills">
+                                <strong>Skills</strong>
+                                <span class="skills-tag">Google Calendar</span>
+                                <span class="skills-tag">Scheduling</span>
+                                <span class="skills-tag">Time Management</span>
+                            </div>
+                        </div>
+                    </article>
 
-            <p>
-                I believe in accuracy, clear communication, organization,
-                and delivering work on time.
-            </p>
+                    <!-- PROJECT 3 -->
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <img src="project-03-crm-management.jpg" alt="CRM customer records project" loading="lazy">
+                            <figcaption>Customer relationship management</figcaption>
+                        </figure>
+                        <div class="project-body">
+                            <h3>CRM & Customer Records</h3>
+                            <p>Creating and maintaining customer records, organizing contact information, tracking leads, and managing follow-up information.</p>
+                            <div class="project-skills">
+                                <strong>Skills</strong>
+                                <span class="skills-tag">CRM</span>
+                                <span class="skills-tag">Data Entry</span>
+                                <span class="skills-tag">Customer Management</span>
+                            </div>
+                        </div>
+                    </article>
 
+                    <!-- PROJECT 4 -->
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <img src="project-04-excel-data.jpg" alt="Excel spreadsheet organization project" loading="lazy">
+                            <figcaption>Spreadsheet and data organization</figcaption>
+                        </figure>
+                        <div class="project-body">
+                            <h3>Excel Data Management</h3>
+                            <p>Organizing spreadsheets, entering information, cleaning data, arranging records, and creating easy-to-understand tracking sheets.</p>
+                            <div class="project-skills">
+                                <strong>Skills</strong>
+                                <span class="skills-tag">Microsoft Excel</span>
+                                <span class="skills-tag">Data Entry</span>
+                                <span class="skills-tag">Data Organization</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 5 -->
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <img src="project-05-client-onboarding.jpg" alt="Client onboarding workflow project" loading="lazy">
+                            <figcaption>Client onboarding and workflow organization</figcaption>
+                        </figure>
+                        <div class="project-body">
+                            <h3>Client Onboarding</h3>
+                            <p>Organizing client information, preparing onboarding checklists, managing intake details, and arranging welcome information for new customers.</p>
+                            <div class="project-skills">
+                                <strong>Skills</strong>
+                                <span class="skills-tag">Client Support</span>
+                                <span class="skills-tag">Documentation</span>
+                                <span class="skills-tag">Organization</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 6 -->
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <img src="project-06-invoice-tracking.jpg" alt="Invoice and expense tracking spreadsheet" loading="lazy">
+                            <figcaption>Invoice and expense tracking</figcaption>
+                        </figure>
+                        <div class="project-body">
+                            <h3>Invoice & Expense Tracking</h3>
+                            <p>Maintaining organized invoice records, tracking expenses, arranging receipts, and preparing simple financial tracking spreadsheets.</p>
+                            <div class="project-skills">
+                                <strong>Skills</strong>
+                                <span class="skills-tag">Excel</span>
+                                <span class="skills-tag">Record Keeping</span>
+                                <span class="skills-tag">Administrative Support</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 7 -->
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <img src="project-07-content-calendar.jpg" alt="Social media content calendar project" loading="lazy">
+                            <figcaption>Social media content planning</figcaption>
+                        </figure>
+                        <div class="project-body">
+                            <h3>Social Media Content Calendar</h3>
+                            <p>Planning social media posts, organizing content ideas, preparing publishing schedules, and maintaining a consistent content calendar.</p>
+                            <div class="project-skills">
+                                <strong>Skills</strong>
+                                <span class="skills-tag">Content Planning</span>
+                                <span class="skills-tag">Social Media</span>
+                                <span class="skills-tag">Scheduling</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 8 -->
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <img src="project-08-canva-design.jpg" alt="Canva graphic design project" loading="lazy">
+                            <figcaption>Canva graphics and visual content</figcaption>
+                        </figure>
+                        <div class="project-body">
+                            <h3>Canva Graphic Design</h3>
+                            <p>Creating social media graphics, promotional designs, templates, and visual materials for online businesses.</p>
+                            <div class="project-skills">
+                                <strong>Skills</strong>
+                                <span class="skills-tag">Canva</span>
+                                <span class="skills-tag">Graphic Design</span>
+                                <span class="skills-tag">Visual Content</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 9 (Video) -->
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <video controls preload="metadata">
+                                <source src="project-09-video-editing.mp4" type="video/mp4">
+                                Your browser does not support video playback.
+                            </video>
+                            <figcaption>Video editing and promotional content</figcaption>
+                        </figure>
+                        <div class="project-body">
+                            <h3>Short-Form Video Editing</h3>
+                            <p>Editing short videos, arranging clips, adding transitions, and preparing promotional reels for social media platforms.</p>
+                            <div class="project-skills">
+                                <strong>Skills</strong>
+                                <span class="skills-tag">CapCut</span>
+                                <span class="skills-tag">Video Editing</span>
+                                <span class="skills-tag">Content Creation</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 10 -->
+                    <article class="project-card">
+                        <figure class="project-media">
+                            <img src="project-10-file-organization.jpg" alt="Google Drive file organization project" loading="lazy">
+                            <figcaption>Digital files and document organization</figcaption>
+                        </figure>
+                        <div class="project-body">
+                            <h3>Google Drive File Organization</h3>
+                            <p>Creating organized folder structures, arranging digital documents, managing files, and maintaining accessible records.</p>
+                            <div class="project-skills">
+                                <strong>Skills</strong>
+                                <span class="skills-tag">Google Drive</span>
+                                <span class="skills-tag">File Management</span>
+                                <span class="skills-tag">Documentation</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
         </section>
 
-
-        <!-- PROJECTS -->
-        <section id="portfolio">
-
-            <h2>My Projects</h2>
-
-            <p>
-                Explore the following sample projects demonstrating
-                different Virtual Assistant skills.
-            </p>
-
-
-            <!-- PROJECT 1 -->
-            <article>
-
-                <h3>Project 01: Email and Inbox Management</h3>
-
-                <figure>
-                    <img
-                        src="project-01-inbox-management.jpg"
-                        alt="Email inbox organization project"
-                        loading="lazy">
-                    <figcaption>Email organization and inbox management</figcaption>
-                </figure>
-
-                <p>
-                    Organizing emails, creating folders and labels,
-                    sorting messages, and maintaining a clean inbox
-                    for efficient communication.
-                </p>
-
-                <p><strong>Skills:</strong> Gmail, Email Management, Organization</p>
-
-            </article>
-
-
-            <!-- PROJECT 2 -->
-            <article>
-
-                <h3>Project 02: Calendar Management</h3>
-
-                <figure>
-                    <img
-                        src="project-02-calendar-management.jpg"
-                        alt="Calendar scheduling project"
-                        loading="lazy">
-                    <figcaption>Calendar and appointment scheduling</figcaption>
-                </figure>
-
-                <p>
-                    Creating organized schedules, managing appointments,
-                    tracking deadlines, and planning daily activities.
-                </p>
-
-                <p><strong>Skills:</strong> Google Calendar, Scheduling, Time Management</p>
-
-            </article>
-
-
-            <!-- PROJECT 3 -->
-            <article>
-
-                <h3>Project 03: CRM and Customer Records</h3>
-
-                <figure>
-                    <img
-                        src="project-03-crm-management.jpg"
-                        alt="CRM customer records project"
-                        loading="lazy">
-                    <figcaption>Customer relationship management</figcaption>
-                </figure>
-
-                <p>
-                    Creating and maintaining customer records,
-                    organizing contact information, tracking leads,
-                    and managing follow-up information.
-                </p>
-
-                <p><strong>Skills:</strong> CRM, Data Entry, Customer Management</p>
-
-            </article>
-
-
-            <!-- PROJECT 4 -->
-            <article>
-
-                <h3>Project 04: Excel Data Management</h3>
-
-                <figure>
-                    <img
-                        src="project-04-excel-data.jpg"
-                        alt="Excel spreadsheet organization project"
-                        loading="lazy">
-                    <figcaption>Spreadsheet and data organization</figcaption>
-                </figure>
-
-                <p>
-                    Organizing spreadsheets, entering information,
-                    cleaning data, arranging records, and creating
-                    easy-to-understand tracking sheets.
-                </p>
-
-                <p><strong>Skills:</strong> Microsoft Excel, Data Entry, Data Organization</p>
-
-            </article>
-
-
-            <!-- PROJECT 5 -->
-            <article>
-
-                <h3>Project 05: Client Onboarding</h3>
-
-                <figure>
-                    <img
-                        src="project-05-client-onboarding.jpg"
-                        alt="Client onboarding workflow project"
-                        loading="lazy">
-                    <figcaption>Client onboarding and workflow organization</figcaption>
-                </figure>
-
-                <p>
-                    Organizing client information, preparing onboarding
-                    checklists, managing intake details, and arranging
-                    welcome information for new customers.
-                </p>
-
-                <p><strong>Skills:</strong> Client Support, Documentation, Organization</p>
-
-            </article>
-
-
-            <!-- PROJECT 6 -->
-            <article>
-
-                <h3>Project 06: Invoice and Expense Tracking</h3>
-
-                <figure>
-                    <img
-                        src="project-06-invoice-tracking.jpg"
-                        alt="Invoice and expense tracking spreadsheet"
-                        loading="lazy">
-                    <figcaption>Invoice and expense tracking</figcaption>
-                </figure>
-
-                <p>
-                    Maintaining organized invoice records, tracking
-                    expenses, arranging receipts, and preparing
-                    simple financial tracking spreadsheets.
-                </p>
-
-                <p><strong>Skills:</strong> Excel, Record Keeping, Administrative Support</p>
-
-            </article>
-
-
-            <!-- PROJECT 7 -->
-            <article>
-
-                <h3>Project 07: Social Media Content Calendar</h3>
-
-                <figure>
-                    <img
-                        src="project-07-content-calendar.jpg"
-                        alt="Social media content calendar project"
-                        loading="lazy">
-                    <figcaption>Social media content planning</figcaption>
-                </figure>
-
-                <p>
-                    Planning social media posts, organizing content
-                    ideas, preparing publishing schedules, and
-                    maintaining a consistent content calendar.
-                </p>
-
-                <p><strong>Skills:</strong> Content Planning, Social Media, Scheduling</p>
-
-            </article>
-
-
-            <!-- PROJECT 8 -->
-            <article>
-
-                <h3>Project 08: Canva Graphic Design</h3>
-
-                <figure>
-                    <img
-                        src="project-08-canva-design.jpg"
-                        alt="Canva graphic design project"
-                        loading="lazy">
-                    <figcaption>Canva graphics and visual content</figcaption>
-                </figure>
-
-                <p>
-                    Creating social media graphics, promotional
-                    designs, templates, and visual materials
-                    for online businesses.
-                </p>
-
-                <p><strong>Skills:</strong> Canva, Graphic Design, Visual Content</p>
-
-            </article>
-
-
-            <!-- PROJECT 9 -->
-            <article>
-
-                <h3>Project 09: Short-Form Video Editing</h3>
-
-                <figure>
-
-                    <video controls preload="metadata">
-                        <source
-                            src="project-09-video-editing.mp4"
-                            type="video/mp4">
-
-                        Your browser does not support video playback.
-
-                    </video>
-
-                    <figcaption>Video editing and promotional content</figcaption>
-
-                </figure>
-
-                <p>
-                    Editing short videos, arranging clips,
-                    adding transitions, and preparing promotional
-                    reels for social media platforms.
-                </p>
-
-                <p><strong>Skills:</strong> CapCut, Video Editing, Content Creation</p>
-
-            </article>
-
-
-            <!-- PROJECT 10 -->
-            <article>
-
-                <h3>Project 10: Google Drive File Organization</h3>
-
-                <figure>
-                    <img
-                        src="project-10-file-organization.jpg"
-                        alt="Google Drive file organization project"
-                        loading="lazy">
-                    <figcaption>Digital files and document organization</figcaption>
-                </figure>
-
-                <p>
-                    Creating organized folder structures,
-                    arranging digital documents, managing files,
-                    and maintaining accessible records.
-                </p>
-
-                <p><strong>Skills:</strong> Google Drive, File Management, Documentation</p>
-
-            </article>
-
+        <!-- SERVICES SUMMARY -->
+        <section id="services" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">SERVICES</p>
+                    <h2>What I Can Do For You</h2>
+                    <p>Every project above reflects one of the core services I offer to creators and small businesses.</p>
+                </div>
+                <div class="service-list">
+                    <div class="service-item"><span class="check">✓</span><p>Email and Inbox Management</p></div>
+                    <div class="service-item"><span class="check">✓</span><p>Calendar and Appointment Scheduling</p></div>
+                    <div class="service-item"><span class="check">✓</span><p>CRM and Customer Records</p></div>
+                    <div class="service-item"><span class="check">✓</span><p>Data Entry and Excel Management</p></div>
+                    <div class="service-item"><span class="check">✓</span><p>Client Onboarding Support</p></div>
+                    <div class="service-item"><span class="check">✓</span><p>Invoice and Document Organization</p></div>
+                    <div class="service-item"><span class="check">✓</span><p>Social Media Content Scheduling</p></div>
+                    <div class="service-item"><span class="check">✓</span><p>Canva Graphic Design</p></div>
+                    <div class="service-item"><span class="check">✓</span><p>Short-Form Video Editing</p></div>
+                    <div class="service-item"><span class="check">✓</span><p>Google Drive File Management</p></div>
+                </div>
+            </div>
         </section>
 
-
-        <!-- SERVICES -->
-        <section id="services">
-
-            <h2>My Services</h2>
-
-            <ul>
-                <li>Email and Inbox Management</li>
-                <li>Calendar and Appointment Scheduling</li>
-                <li>CRM and Customer Records</li>
-                <li>Data Entry and Excel Management</li>
-                <li>Client Onboarding Support</li>
-                <li>Invoice and Document Organization</li>
-                <li>Social Media Content Scheduling</li>
-                <li>Canva Graphic Design</li>
-                <li>Short-Form Video Editing</li>
-                <li>Google Drive File Management</li>
-            </ul>
-
+        <!-- CONTACT CTA -->
+        <section class="section section-light">
+            <div class="container">
+                <div class="cta-box">
+                    <p class="eyebrow" style="color: #a5b4fc;">LET'S WORK TOGETHER</p>
+                    <h2>Ready to Get Your Time Back?</h2>
+                    <p>Have a project in mind? Send me a message and I'll reply within 24 hours to discuss how I can support your business.</p>
+                    <div class="cta-actions">
+                        <a href="mailto:mehwishasghar958@gmail.com?subject=Virtual Assistant Inquiry" class="button button-primary">Email Me Now</a>
+                        <a href="Mehwish-Asghar-CV.pdf" download class="button button-secondary">Download Resume</a>
+                    </div>
+                </div>
+            </div>
         </section>
-
-
-        <!-- TOOLS -->
-        <section id="tools">
-
-            <h2>Tools I Use</h2>
-
-            <h3>Administration and Organization</h3>
-
-            <ul>
-                <li>Gmail</li>
-                <li>Google Calendar</li>
-                <li>Google Drive</li>
-                <li>Microsoft Word</li>
-            </ul>
-
-            <h3>Data and Planning</h3>
-
-            <ul>
-                <li>Microsoft Excel</li>
-                <li>Trello</li>
-            </ul>
-
-            <h3>Content and Design</h3>
-
-            <ul>
-                <li>Canva</li>
-                <li>CapCut</li>
-            </ul>
-
-        </section>
-
-
-        <!-- RESUME -->
-        <section id="resume">
-
-            <h2>My Resume</h2>
-
-            <p>
-                You can view or download my resume to learn more
-                about my skills and professional background.
-            </p>
-
-            <a href="Mehwish-Asghar-CV.pdf" download>
-                Download My Resume
-            </a>
-
-        </section>
-
-
-        <!-- CONTACT -->
-        <section id="contact">
-
-            <h2>Let's Work Together</h2>
-
-            <p>
-                Have a project in mind? Send me a message.
-                I would be happy to discuss how I can support your business.
-            </p>
-
-            <p>
-                <strong>Email:</strong>
-                <a href="mailto:mehwishasghar958@gmail.com">
-                    mehwishasghar958@gmail.com
-                </a>
-            </p>
-
-            <p>
-                <strong>Location:</strong> Pakistan
-            </p>
-
-
-            <!-- FORMSPREE CONTACT FORM -->
-            <h3>Send Me a Message</h3>
-
-            <form action="https://formspree.io/f/xljbjjay" method="POST">
-
-                <label for="name">Name</label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Your Name"
-                    required>
-
-                <br><br>
-
-                <label for="email">Email</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Your Email Address"
-                    required>
-
-                <br><br>
-
-                <label for="service">What do you need help with?</label>
-
-                <select id="service" name="service" required>
-
-                    <option value="">Choose a service</option>
-
-                    <option>Inbox and Admin Management</option>
-
-                    <option>CRM and Customer Records</option>
-
-                    <option>Content and Creator Support</option>
-
-                    <option>Excel and Data Management</option>
-
-                    <option>Canva Graphic Design</option>
-
-                    <option>Video Editing</option>
-
-                    <option>Other</option>
-
-                </select>
-
-                <br><br>
-
-                <label for="message">Message</label>
-
-                <br>
-
-                <textarea
-                    id="message"
-                    name="message"
-                    rows="6"
-                    cols="40"
-                    placeholder="Tell me about your project..."
-                    required></textarea>
-
-                <br><br>
-
-                <button type="submit">Send Message</button>
-
-            </form>
-
-        </section>
-
     </main>
 
-
     <!-- FOOTER -->
-    <footer>
-
-        <h2>Mehwish Asghar</h2>
-
-        <p>Professional Virtual Assistant</p>
-
-        <p>
-            Helping creators and online businesses stay organized.
-        </p>
-
-        <nav aria-label="Footer navigation">
-
-            <a href="index.html">Home</a> |
-            <a href="portfolio.html">Portfolio</a> |
-            <a href="index.html#contact">Contact</a>
-
-        </nav>
-
-        <p>
-            <a
-                href="https://www.instagram.com/12___________mimi46?dlrf=MTk2ejZlanU2ZXNyZQ=="
-                target="_blank"
-                rel="noopener noreferrer">
-                Instagram
-            </a>
-        </p>
-
-        <p>
-            <a href="mailto:mehwishasghar958@gmail.com">
-                Email Me
-            </a>
-        </p>
-
-        <p>
-            &copy; 2026 Mehwish Asghar. All rights reserved.
-        </p>
-
+    <footer class="footer">
+        <div class="container footer-container">
+            <div>
+                <a href="index.html" class="logo">Mehwish</a>
+                <p>Professional Virtual Assistant for Creators and Online Businesses</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="https://www.instagram.com/12___________mimi46?dlrf=MTk2ejZlanU2ZXNyZQ==" target="_blank">Instagram</a>
+            </div>
+            <p class="copyright">© 2026 Mehwish. All rights reserved.</p>
+        </div>
     </footer>
 
 </body>
-
 </html>
