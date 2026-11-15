@@ -117,14 +117,66 @@
         .tool-card .tool-icon { font-size: 2rem; margin-bottom: 10px; }
         .tool-card h3 { font-size: 1rem; margin-bottom: 8px; }
         .tool-card p { font-size: 0.85rem; margin: 0; }
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section section-light">
+            <div class="container contact-container">
+                
+                <!-- Left Column: Contact Details -->
+                <div>
+                    <p class="eyebrow">CONTACT</p>
+                    <h2>Let's work together.</h2>
+                    <p>Tell me what’s taking up your time, and I’ll reply within 24 hours to discuss how I can help streamline your business.</p>
+                    <div class="contact-details">
+                        <div>
+                            <span>Email</span>
+                            <a href="mailto:mehwishasghar958@gmail.com">mehwishasghar958@gmail.com</a>
+                        </div>
+                        <div>
+                            <span>Location</span>
+                            <p>Pakistan</p>
+                        </div>
+                        <div>
+                            <span>Availability</span>
+                            <p>Open to Full-time, Part-time, & Freelance Remote Work</p>
+                        </div>
+                        <div>
+                            <span>Let's Connect</span>
+                            <a href="https://www.instagram.com/12___________mimi46?dlrf=MTk2ejZlanU2ZXNyZQ==" target="_blank">Instagram</a>
+                        </div>   
+                    </div>
+                </div>
 
-        /* --- CONTACT --- */
-        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-        .contact-details div { margin-bottom: 25px; }
-        .contact-details span { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); margin-bottom: 5px; }
-        .contact-details a, .contact-details p { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); margin: 0; }
-        .contact-details a:hover { color: var(--primary); }
+                <!-- Right Column: Contact Form -->
+                <div style="background: var(--white); padding: 35px; border-radius: 16px; border: 1px solid var(--border);">
+                    <h3 style="margin-bottom: 25px;">Get in Touch</h3>
+                    <form action="https://formspree.io/f/xljbjjay" method="POST">
+                        <label>Name</label>
+                        <input type="text" name="name" placeholder="Your Name" required>
 
+                        <label>Email</label>
+                        <input type="email" name="email" placeholder="Your Email Address" required>
+
+                        <label>What do you need help with?</label>
+                        <select name="service" required>
+                            <option value="">Choose a service</option>
+                            <option>Inbox & Admin Management</option>
+                            <option>CRM & Customer Records</option>
+                            <option>Content & Creator Support</option>
+                            <option>Excel & Data Management</option>
+                            <option>Other</option>
+                        </select>
+
+                        <label>Message</label>
+                        <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+
+                        <button type="submit" class="button button-primary">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
         /* --- FOOTER --- */
         .footer { background: var(--text-dark); color: var(--white); padding: 60px 0 30px; }
         .footer-container { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 30px; }
