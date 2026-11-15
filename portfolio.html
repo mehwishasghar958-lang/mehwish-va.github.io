@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#faf8f3">
 
     <title>Portfolio | Mehwish Asghar</title>
 
@@ -28,17 +28,24 @@
     <style>
         /* --- RESET & BASE --- */
         :root {
-            --primary: #4f46e5;
-            --primary-hover: #4338ca;
-            --text-dark: #1e293b;
-            --text-light: #64748b;
-            --bg-light: #f8fafc;
+            /* NEW PALETTE: cream base, black/charcoal text & highlights */
+            --primary: #111111;          /* Pure black — buttons & highlights */
+            --primary-hover: #2b2b2b;    /* Deep dark grey on hover */
+            --text-dark: #1a1a1a;        /* Dark charcoal headings */
+            --text-light: #4a4a4a;       /* Muted charcoal body text */
+            --bg-light: #f3efe7;         /* Slightly deeper cream for section tint */
+            --bg-base: #faf8f3;          /* Soft off-white / cream base */
             --white: #ffffff;
-            --border: #e2e8f0;
+            --border: #e2ddd2;           /* Warm subtle border */
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'DM Sans', sans-serif; line-height: 1.6; color: var(--text-dark); background: var(--white); }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-base);
+        }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         ul { list-style: none; }
         img, video { max-width: 100%; display: block; }
@@ -48,7 +55,7 @@
         /* --- SKIP LINK --- */
         .skip-link {
             position: absolute; left: -9999px; top: 0;
-            background: var(--primary); color: white;
+            background: var(--primary); color: var(--white);
             padding: 10px 16px; z-index: 2000; border-radius: 0 0 8px 0;
         }
         .skip-link:focus { left: 0; }
@@ -57,7 +64,7 @@
         .eyebrow {
             text-transform: uppercase; letter-spacing: 2px;
             font-size: 0.75rem; font-weight: 700;
-            color: var(--primary); margin-bottom: 12px;
+            color: var(--text-dark); margin-bottom: 12px;
         }
         h1, h2, h3 { color: var(--text-dark); line-height: 1.2; }
         h1 { font-size: 2.75rem; font-weight: 700; margin-bottom: 15px; }
@@ -77,7 +84,7 @@
         /* --- HEADER / NAV --- */
         .header {
             position: sticky; top: 0; z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(250, 248, 243, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
             padding: 16px 0;
@@ -88,8 +95,11 @@
         .nav-links > a, .dropdown-toggle {
             font-weight: 500; font-size: 0.92rem; color: var(--text-dark);
         }
-        .nav-links > a:hover, .dropdown-toggle:hover { color: var(--primary); }
-        .nav-links a[aria-current="page"] { color: var(--primary); font-weight: 700; }
+        .nav-links > a:hover, .dropdown-toggle:hover { color: var(--primary-hover); }
+        .nav-links a[aria-current="page"] {
+            color: var(--text-dark); font-weight: 700;
+            border-bottom: 2px solid var(--primary); padding-bottom: 2px;
+        }
         .nav-cta { padding: 9px 18px; font-size: 0.9rem; }
 
         /* --- NAV DROPDOWN --- */
@@ -101,7 +111,7 @@
             background: var(--white);
             border: 1px solid var(--border);
             border-radius: 12px;
-            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
+            box-shadow: 0 12px 32px rgba(17, 17, 17, 0.12);
             padding: 8px;
             min-width: 260px;
             opacity: 0; visibility: hidden;
@@ -116,7 +126,7 @@
             font-size: 0.88rem; color: var(--text-dark);
             border-radius: 8px;
         }
-        .dropdown-menu a:hover { background: var(--bg-light); color: var(--primary); }
+        .dropdown-menu a:hover { background: var(--bg-base); color: var(--text-dark); }
 
         /* --- MOBILE MENU BUTTON --- */
         .menu-toggle {
@@ -136,7 +146,8 @@
         .section-note {
             display: inline-block; margin-top: 12px;
             font-size: 0.85rem; color: var(--text-light);
-            background: var(--bg-light); padding: 8px 16px; border-radius: 30px;
+            background: var(--white); border: 1px solid var(--border);
+            padding: 8px 16px; border-radius: 30px;
         }
 
         /* --- SUB-SECTIONS --- */
@@ -165,7 +176,7 @@
         /* --- PROJECT INFO --- */
         .project-number {
             display: inline-block; font-size: 2.5rem; font-weight: 700;
-            color: var(--primary); opacity: 0.25; line-height: 1;
+            color: var(--primary); opacity: 0.22; line-height: 1;
             margin-bottom: 10px;
         }
         .project-category {
@@ -175,27 +186,26 @@
         }
         .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
         .project-tags span {
-            background: var(--bg-light);
-            color: var(--primary);
+            background: var(--white);
+            border: 1px solid var(--border);
+            color: var(--text-dark);
             font-size: 0.78rem; font-weight: 600;
             padding: 5px 12px; border-radius: 20px;
         }
 
         /* --- PROJECT VISUAL SHOWCASE --- */
-        .project-visual {
-            display: flex; flex-direction: column; gap: 20px;
-        }
+        .project-visual { display: flex; flex-direction: column; gap: 20px; }
         .image-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .showcase-item {
             background: var(--white);
             border: 1px solid var(--border);
             border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+            box-shadow: 0 6px 20px rgba(17, 17, 17, 0.05);
         }
         .showcase-label {
             display: block;
-            background: var(--text-dark);
+            background: var(--primary);
             color: var(--white);
             font-size: 0.68rem; font-weight: 700;
             text-transform: uppercase; letter-spacing: 1.5px;
@@ -203,18 +213,13 @@
         }
         .showcase-item img,
         .showcase-item video {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
+            width: 100%; height: 220px;
+            object-fit: cover; display: block;
             background: var(--bg-light);
         }
         .showcase-caption {
-            padding: 16px 18px;
-            margin: 0;
-            font-size: 0.86rem;
-            color: var(--text-light);
-            line-height: 1.55;
+            padding: 16px 18px; margin: 0;
+            font-size: 0.86rem; color: var(--text-light); line-height: 1.55;
         }
         .showcase-caption strong { color: var(--text-dark); }
 
@@ -231,20 +236,24 @@
         }
 
         /* --- FOOTER --- */
-        .footer { background: var(--text-dark); color: var(--white); padding: 60px 0 30px; margin-top: 40px; }
+        .footer {
+            background: var(--primary); /* black footer */
+            color: var(--white);
+            padding: 60px 0 30px; margin-top: 40px;
+        }
         .footer-container {
             display: flex; justify-content: space-between;
             align-items: flex-start; flex-wrap: wrap; gap: 30px;
         }
         .footer .logo { color: var(--white); margin-bottom: 10px; display: block; }
-        .footer p { color: #94a3b8; font-size: 0.9rem; }
+        .footer p { color: #b9b5ab; font-size: 0.9rem; }
         .footer-links { display: flex; gap: 25px; flex-wrap: wrap; }
-        .footer-links a { color: #cbd5e1; font-size: 0.92rem; }
+        .footer-links a { color: #d6d2c8; font-size: 0.92rem; }
         .footer-links a:hover { color: var(--white); }
         .copyright {
             width: 100%; text-align: center; margin-top: 40px;
-            padding-top: 20px; border-top: 1px solid #334155;
-            color: #64748b; font-size: 0.85rem;
+            padding-top: 20px; border-top: 1px solid #333333;
+            color: #8a867c; font-size: 0.85rem;
         }
 
         /* --- RESPONSIVE --- */
@@ -261,7 +270,7 @@
             .nav-links {
                 display: none;
                 position: absolute; top: 100%; left: 0; right: 0;
-                background: var(--white);
+                background: var(--bg-base);
                 flex-direction: column;
                 padding: 20px 24px;
                 border-bottom: 1px solid var(--border);
@@ -878,16 +887,3 @@
 
             navLinks.querySelectorAll("a").forEach((link) => {
                 link.addEventListener("click", () => setMenu(false));
-            });
-
-            document.addEventListener("keydown", (event) => {
-                if (event.key === "Escape" && navLinks.classList.contains("open")) {
-                    setMenu(false);
-                    menuToggle.focus();
-                }
-            });
-        }
-    </script>
-
-</body>
-</html>
