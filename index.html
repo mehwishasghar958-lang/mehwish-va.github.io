@@ -150,8 +150,35 @@
             .footer-container { flex-direction: column; text-align: center; align-items: center; }
             .footer-links { flex-wrap: wrap; justify-content: center; }
         }
-    </style>
-</head>
+form label {
+    display: block;
+    font-weight: 600;
+    margin: 15px 0 7px;
+    color: var(--text-dark);
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    width: 100%;
+    margin-top: 15px;
+    cursor: pointer;
+}</head>
 <body>
 
     <!-- NAVIGATION -->
