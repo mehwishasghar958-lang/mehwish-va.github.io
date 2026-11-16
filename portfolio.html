@@ -4,303 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#faf8f3">
+    <meta name="theme-color" content="#ffffff">
 
-    <title>Portfolio | Mehwish Asghar</title>
+    <title>Mehwish Asghar | Portfolio</title>
 
-    <!-- SEO -->
     <meta name="description"
-        content="Portfolio of Mehwish Asghar, a Virtual Assistant providing admin support, CRM organization, data management, Canva design, and content assistance for creators and small online businesses.">
-    <link rel="canonical" href="portfolio.html">
+        content="Portfolio of Mehwish Asghar, admin and operations support for digital creators and small online businesses: content planning, CRM, scheduling, email and file systems, and reporting.">
 
-    <!-- Open Graph / Social Preview -->
     <meta property="og:title" content="Portfolio | Mehwish Asghar">
     <meta property="og:description"
-        content="Admin support, CRM organization, data management, Canva design, and content assistance for digital creators and small online businesses.">
+        content="Admin and operations support for digital creators and small online businesses: content planning, CRM, scheduling, organization systems, and reporting.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/portfolio-preview.jpg">
+    <meta property="og:image:alt" content="Preview of Mehwish Asghar's portfolio website">
+    <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        /* --- RESET & BASE --- */
-        :root {
-            /* NEW PALETTE: cream base, black/charcoal text & highlights */
-            --primary: #111111;          /* Pure black — buttons & highlights */
-            --primary-hover: #2b2b2b;    /* Deep dark grey on hover */
-            --text-dark: #1a1a1a;        /* Dark charcoal headings */
-            --text-light: #4a4a4a;       /* Muted charcoal body text */
-            --bg-light: #f3efe7;         /* Slightly deeper cream for section tint */
-            --bg-base: #faf8f3;          /* Soft off-white / cream base */
-            --white: #ffffff;
-            --border: #e2ddd2;           /* Warm subtle border */
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'DM Sans', sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: var(--bg-base);
-        }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-        img, video { max-width: 100%; display: block; }
-        .container { max-width: 1150px; margin: 0 auto; padding: 0 24px; }
-        .section { padding: 80px 0; }
+    <link rel="icon" type="image/png" href="images/site-icon.png">
 
-        /* --- SKIP LINK --- */
-        .skip-link {
-            position: absolute; left: -9999px; top: 0;
-            background: var(--primary); color: var(--white);
-            padding: 10px 16px; z-index: 2000; border-radius: 0 0 8px 0;
-        }
-        .skip-link:focus { left: 0; }
-
-        /* --- TYPOGRAPHY --- */
-        .eyebrow {
-            text-transform: uppercase; letter-spacing: 2px;
-            font-size: 0.75rem; font-weight: 700;
-            color: var(--text-dark); margin-bottom: 12px;
-        }
-        h1, h2, h3 { color: var(--text-dark); line-height: 1.2; }
-        h1 { font-size: 2.75rem; font-weight: 700; margin-bottom: 15px; }
-        h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 20px; }
-        h3 { font-size: 1.35rem; font-weight: 600; margin-bottom: 12px; }
-        p { color: var(--text-light); margin-bottom: 15px; }
-
-        /* --- BUTTONS --- */
-        .button {
-            display: inline-block; padding: 11px 24px; border-radius: 8px;
-            font-weight: 600; font-size: 0.95rem; cursor: pointer;
-            border: none; text-align: center;
-        }
-        .button-primary { background: var(--primary); color: var(--white); }
-        .button-primary:hover { background: var(--primary-hover); }
-
-        /* --- HEADER / NAV --- */
-        .header {
-            position: sticky; top: 0; z-index: 1000;
-            background: rgba(250, 248, 243, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 0;
-        }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.3rem; font-weight: 700; color: var(--text-dark); }
-        .nav-links { display: flex; gap: 26px; align-items: center; }
-        .nav-links > a, .dropdown-toggle {
-            font-weight: 500; font-size: 0.92rem; color: var(--text-dark);
-        }
-        .nav-links > a:hover, .dropdown-toggle:hover { color: var(--primary-hover); }
-        .nav-links a[aria-current="page"] {
-            color: var(--text-dark); font-weight: 700;
-            border-bottom: 2px solid var(--primary); padding-bottom: 2px;
-        }
-        .nav-cta { padding: 9px 18px; font-size: 0.9rem; }
-
-        /* --- NAV DROPDOWN --- */
-        .nav-dropdown { position: relative; }
-        .dropdown-toggle { display: inline-block; padding: 5px 0; cursor: pointer; }
-        .dropdown-menu {
-            position: absolute; top: 130%; left: 50%;
-            transform: translateX(-50%) translateY(8px);
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            box-shadow: 0 12px 32px rgba(17, 17, 17, 0.12);
-            padding: 8px;
-            min-width: 260px;
-            opacity: 0; visibility: hidden;
-            transition: 0.25s;
-        }
-        .nav-dropdown:hover .dropdown-menu,
-        .nav-dropdown:focus-within .dropdown-menu {
-            opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
-        }
-        .dropdown-menu a {
-            display: block; padding: 10px 14px;
-            font-size: 0.88rem; color: var(--text-dark);
-            border-radius: 8px;
-        }
-        .dropdown-menu a:hover { background: var(--bg-base); color: var(--text-dark); }
-
-        /* --- MOBILE MENU BUTTON --- */
-        .menu-toggle {
-            display: none; background: none; border: none;
-            cursor: pointer; padding: 8px;
-            flex-direction: column; gap: 5px;
-        }
-        .menu-toggle span {
-            width: 24px; height: 2px; background: var(--text-dark);
-            border-radius: 2px; transition: 0.3s;
-        }
-
-        /* --- PAGE HEADING --- */
-        .portfolio { padding-top: 70px; }
-        .section-heading { max-width: 760px; margin: 0 auto 70px; text-align: center; }
-        .section-title { margin-bottom: 16px; }
-        .section-note {
-            display: inline-block; margin-top: 12px;
-            font-size: 0.85rem; color: var(--text-light);
-            background: var(--white); border: 1px solid var(--border);
-            padding: 8px 16px; border-radius: 30px;
-        }
-
-        /* --- SUB-SECTIONS --- */
-        .portfolio-sub-section { margin: 70px 0 40px; text-align: center; }
-        .portfolio-sub-section h2 {
-            display: inline-block;
-            font-size: 1.4rem; font-weight: 700;
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--primary);
-        }
-
-        /* --- PROJECT ROWS --- */
-        .project {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 60px;
-            align-items: flex-start;
-            padding: 50px 0;
-            border-bottom: 1px solid var(--border);
-        }
-        .project:last-of-type { border-bottom: none; }
-        .project-reverse { grid-template-columns: 1.2fr 1fr; }
-        .project-reverse .project-info { order: 2; }
-        .project-reverse .project-visual { order: 1; }
-
-        /* --- PROJECT INFO --- */
-        .project-number {
-            display: inline-block; font-size: 2.5rem; font-weight: 700;
-            color: var(--primary); opacity: 0.22; line-height: 1;
-            margin-bottom: 10px;
-        }
-        .project-category {
-            font-size: 0.72rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1.5px;
-            color: var(--text-light); margin-bottom: 8px;
-        }
-        .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
-        .project-tags span {
-            background: var(--white);
-            border: 1px solid var(--border);
-            color: var(--text-dark);
-            font-size: 0.78rem; font-weight: 600;
-            padding: 5px 12px; border-radius: 20px;
-        }
-
-        /* --- PROJECT VISUAL SHOWCASE --- */
-        .project-visual { display: flex; flex-direction: column; gap: 20px; }
-        .image-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .showcase-item {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 6px 20px rgba(17, 17, 17, 0.05);
-        }
-        .showcase-label {
-            display: block;
-            background: var(--primary);
-            color: var(--white);
-            font-size: 0.68rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1.5px;
-            padding: 7px 14px;
-        }
-        .showcase-item img,
-        .showcase-item video {
-            width: 100%; height: 220px;
-            object-fit: cover; display: block;
-            background: var(--bg-light);
-        }
-        .showcase-caption {
-            padding: 16px 18px; margin: 0;
-            font-size: 0.86rem; color: var(--text-light); line-height: 1.55;
-        }
-        .showcase-caption strong { color: var(--text-dark); }
-
-        /* --- SHOWCASE DIVIDER --- */
-        .showcase-divider {
-            display: flex; align-items: center; gap: 15px;
-            color: var(--text-light);
-            font-size: 0.78rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 1.5px;
-        }
-        .showcase-divider::before,
-        .showcase-divider::after {
-            content: ""; flex: 1; height: 1px; background: var(--border);
-        }
-
-        /* --- FOOTER --- */
-        .footer {
-            background: var(--primary); /* black footer */
-            color: var(--white);
-            padding: 60px 0 30px; margin-top: 40px;
-        }
-        .footer-container {
-            display: flex; justify-content: space-between;
-            align-items: flex-start; flex-wrap: wrap; gap: 30px;
-        }
-        .footer .logo { color: var(--white); margin-bottom: 10px; display: block; }
-        .footer p { color: #b9b5ab; font-size: 0.9rem; }
-        .footer-links { display: flex; gap: 25px; flex-wrap: wrap; }
-        .footer-links a { color: #d6d2c8; font-size: 0.92rem; }
-        .footer-links a:hover { color: var(--white); }
-        .copyright {
-            width: 100%; text-align: center; margin-top: 40px;
-            padding-top: 20px; border-top: 1px solid #333333;
-            color: #8a867c; font-size: 0.85rem;
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 900px) {
-            .project, .project-reverse { grid-template-columns: 1fr; gap: 30px; }
-            .project-reverse .project-info,
-            .project-reverse .project-visual { order: initial; }
-            .image-showcase { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 768px) {
-            h1 { font-size: 2.1rem; }
-            h2 { font-size: 1.45rem; }
-            .menu-toggle { display: flex; }
-            .nav-links {
-                display: none;
-                position: absolute; top: 100%; left: 0; right: 0;
-                background: var(--bg-base);
-                flex-direction: column;
-                padding: 20px 24px;
-                border-bottom: 1px solid var(--border);
-                gap: 18px;
-                align-items: flex-start;
-            }
-            .nav-links.open { display: flex; }
-            .dropdown-menu {
-                position: static; opacity: 1; visibility: visible;
-                transform: none; box-shadow: none; border: none;
-                padding: 8px 0 0 12px; min-width: 100%;
-            }
-            .footer-container { flex-direction: column; text-align: center; align-items: center; }
-            .footer-links { justify-content: center; }
-            .showcase-item img, .showcase-item video { height: 180px; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <a class="skip-link" href="#portfolio">Skip to main content</a>
 
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
     <header class="header">
         <div class="container nav-container">
 
-            <a href="index.html" class="logo">Mehwish</a>
+            <a href="index.html" class="logo">Mehwish Asghar</a>
 
             <nav class="nav-links" id="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
@@ -311,16 +45,16 @@
                     <a href="portfolio.html" class="dropdown-toggle" aria-current="page">Portfolio</a>
 
                     <div class="dropdown-menu">
-                        <a href="#section-1">Admin &amp; Inbox Management</a>
-                        <a href="#section-2">CRM &amp; Client Records</a>
-                        <a href="#section-3">Data, Content &amp; Design</a>
+                        <a href="portfolio.html#section-1">Creator &amp; Online Business Support</a>
+                        <a href="portfolio.html#section-2">Admin &amp; Operations Systems</a>
+                        <a href="portfolio.html#section-3">Data, Reporting &amp; Research</a>
                     </div>
                 </div>
 
                 <a href="index.html#tools">Tools</a>
                 <a href="index.html#resume">Resume</a>
                 <a href="index.html#contact">Contact</a>
-                <a href="mailto:mehwishasghar958@gmail.com" class="button button-primary nav-cta">Hire Me</a>
+                <a href="https://calendly.com/mehwishasghar958/new-meeting" target="_blank" rel="noopener noreferrer" class="button button-primary nav-cta">Book a Call</a>
             </nav>
 
             <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
@@ -335,9 +69,6 @@
 
     <main>
 
-        <!-- =====================================================
-             PORTFOLIO
-        ====================================================== -->
         <section id="portfolio" class="portfolio section">
 
             <div class="container">
@@ -348,197 +79,177 @@
                     <h1 class="section-title">Portfolio Projects</h1>
 
                     <p>
-                        Real workflows and sample projects that show how I keep inboxes, calendars,
-                        client records, and content organized for creators and small online businesses.
+                        Systems, workflows, and content support that keep creators and
+                        small online businesses organized, so they can focus on growing.
                     </p>
                     <p class="section-note">
-                        All projects use sample or fictional data created for demonstration purposes.
+                        Projects 1–2 were created for Choyeo Digitals. Projects 3–10 use
+                        fictional sample data created for practice.
                     </p>
                 </div>
 
 
-                <!-- =================================================
-                     SECTION 1 — ADMIN & INBOX MANAGEMENT
-                ================================================== -->
-
                 <section class="portfolio-sub-section">
-                    <h2 id="section-1">Admin &amp; Inbox Management</h2>
+                    <h2 id="section-1">Creator &amp; Online Business Support</h2>
                 </section>
 
-                <!-- PROJECT 1 — EMAIL & INBOX MANAGEMENT -->
                 <article class="project">
 
                     <div class="project-info">
+
                         <span class="project-number">01</span>
-                        <p class="project-category">EMAIL MANAGEMENT</p>
-                        <h3>Email &amp; Inbox Management</h3>
+
+                        <p class="project-category">SOCIAL MEDIA MANAGEMENT</p>
+
+                        <h3>Social Media Content Planning &amp; Management</h3>
+
                         <p>
-                            Built a simple inbox system that separates urgent messages from everything
-                            else, so important emails do not get buried.
+                            Built a multi-platform content plan in Notion for Choyeo Digitals,
+                            so every post has a clear platform, goal, and purpose before
+                            it is created.
                         </p>
+
                         <div class="project-tags">
-                            <span>Gmail</span>
-                            <span>Email Management</span>
-                            <span>Organization</span>
-                            <span>Prioritization</span>
+                            <span>Content Planning</span>
+                            <span>Content Scheduling</span>
+                            <span>Social Media</span>
+                            <span>Notion</span>
                         </div>
+
                     </div>
 
                     <div class="project-visual">
-                        <div class="showcase-item">
-                            <span class="showcase-label">BEFORE</span>
-                            <img src="project-01-inbox-management.jpg" loading="lazy" decoding="async"
-                                alt="Unorganized email inbox with messages mixed together">
-                            <p class="showcase-caption">
-                                <strong>Before:</strong>
-                                Read and unread messages mixed together with no clear way to
-                                tell what needs a reply first.
-                            </p>
-                        </div>
-
-                        <div class="showcase-divider">
-                            <span>After Organization</span>
-                        </div>
 
                         <div class="showcase-item">
-                            <span class="showcase-label">AFTER</span>
-                            <img src="project-01-inbox-management.jpg" loading="lazy" decoding="async"
-                                alt="Organized email inbox sorted by priority and purpose">
-                            <p class="showcase-caption">
-                                <strong>After:</strong>
-                                Sorted messages by priority and purpose, archived low-priority
-                                emails, and kept high-priority ones in the main inbox.
-                            </p>
-                        </div>
-                    </div>
+                            <span class="showcase-label">CONTENT PLAN</span>
 
-                </article>
+                            <video src="videos/social-media-content-plan.mp4" autoplay muted loop playsinline
+                                preload="metadata"
+                                aria-label="Screen recording of a social media content plan in Notion">
+                            </video>
 
-
-                <!-- PROJECT 2 — CALENDAR MANAGEMENT -->
-                <article class="project project-reverse">
-
-                    <div class="project-info">
-                        <span class="project-number">02</span>
-                        <p class="project-category">SCHEDULING</p>
-                        <h3>Calendar &amp; Appointment Management</h3>
-                        <p>
-                            Designed an organized weekly schedule that handles meetings, deadlines,
-                            and admin tasks without conflicts.
-                        </p>
-                        <div class="project-tags">
-                            <span>Google Calendar</span>
-                            <span>Scheduling</span>
-                            <span>Time Management</span>
-                        </div>
-                    </div>
-
-                    <div class="project-visual">
-                        <div class="showcase-item">
-                            <span class="showcase-label">WEEKLY PLAN</span>
-                            <img src="project-02-calendar-management.jpg" loading="lazy" decoding="async"
-                                alt="Organized weekly calendar with color-coded events">
                             <p class="showcase-caption">
                                 <strong>The plan:</strong>
-                                Color-coded events and tasks by type, with open blocks left
-                                for focused work.
+                                A Notion workspace that tracks each post by platform, content type,
+                                goal, product, creative direction, and call to action.
                             </p>
                         </div>
 
                         <div class="showcase-divider">
-                            <span>Conflict-Free Scheduling</span>
+                            <span>From Plan to Post</span>
                         </div>
 
                         <div class="showcase-item">
-                            <span class="showcase-label">RESULT</span>
-                            <img src="project-02-calendar-management.jpg" loading="lazy" decoding="async"
-                                alt="Resulting calendar with resolved conflicts and balanced week">
+                            <span class="showcase-label">CONTENT IMPLEMENTATION</span>
+
+                            <img src="images/social-media-content-implementation.png" loading="lazy" decoding="async"
+                                alt="Social media posts created from the Choyeo Digitals content plan">
+
                             <p class="showcase-caption">
-                                <strong>Result:</strong>
-                                Resolved conflicts, tracked deadlines, and balanced the week
-                                for focused work.
+                                <strong>The result:</strong>
+                                Turned planned ideas into finished posts, adapting each one to its
+                                platform format, message, visuals, and call to action.
                             </p>
                         </div>
+
                     </div>
 
                 </article>
 
 
-                <!-- PROJECT 3 — FILE ORGANIZATION -->
-                <article class="project">
-
-                    <div class="project-info">
-                        <span class="project-number">03</span>
-                        <p class="project-category">FILE MANAGEMENT</p>
-                        <h3>Google Drive File Organization</h3>
-                        <p>
-                            Reorganized a client's files with a clear folder hierarchy and a
-                            consistent naming convention, so documents are easy to find and share.
-                        </p>
-                        <div class="project-tags">
-                            <span>Google Drive</span>
-                            <span>File Management</span>
-                            <span>Documentation</span>
-                        </div>
-                    </div>
-
-                    <div class="project-visual image-showcase">
-                        <div class="showcase-item">
-                            <span class="showcase-label">BEFORE</span>
-                            <img src="project-10-file-organization.jpg" loading="lazy" decoding="async"
-                                alt="Scattered files with inconsistent names">
-                            <p class="showcase-caption">
-                                <strong>Before:</strong>
-                                Files scattered across folders with inconsistent names.
-                            </p>
-                        </div>
-
-                        <div class="showcase-item">
-                            <span class="showcase-label">AFTER</span>
-                            <img src="project-10-file-organization.jpg" loading="lazy" decoding="async"
-                                alt="Files organized into a clear folder hierarchy">
-                            <p class="showcase-caption">
-                                <strong>After:</strong>
-                                A folder hierarchy, grouped files, and consistent names.
-                            </p>
-                        </div>
-                    </div>
-
-                </article>
-
-
-                <!-- =================================================
-                     SECTION 2 — CRM & CLIENT RECORDS
-                ================================================== -->
-
-                <section class="portfolio-sub-section">
-                    <h2 id="section-2">CRM &amp; Client Records</h2>
-                </section>
-
-                <!-- PROJECT 4 — CRM -->
                 <article class="project project-reverse">
 
                     <div class="project-info">
-                        <span class="project-number">04</span>
-                        <p class="project-category">CRM &amp; CUSTOMER DATA</p>
-                        <h3>CRM Contact &amp; Lead Management</h3>
+
+                        <span class="project-number">02</span>
+
+                        <p class="project-category">CONTENT CREATION</p>
+
+                        <h3>Social Media Graphic Design &amp; Content Creation</h3>
+
                         <p>
-                            Set up and maintained a CRM with sample data, keeping contacts and leads
-                            organized so follow-ups are never missed.
+                            Designed branded graphics for Choyeo Digitals with clear messaging
+                            and a consistent look across social media platforms.
                         </p>
+
                         <div class="project-tags">
-                            <span>CRM</span>
+                            <span>Canva</span>
+                            <span>Graphic Design</span>
+                            <span>Content Creation</span>
+                            <span>Branding</span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-visual">
+
+                        <div class="showcase-item">
+                            <span class="showcase-label">SOCIAL MEDIA DESIGNS</span>
+
+                            <img src="images/social-media-designs.png" loading="lazy" decoding="async"
+                                alt="Social media graphics created in Canva for Choyeo Digitals">
+
+                            <p class="showcase-caption">
+                                <strong>Designs:</strong>
+                                Educational posts, product promotions, and interactive content
+                                built in Canva with a consistent brand style.
+                            </p>
+                        </div>
+
+                        <div class="showcase-divider">
+                            <span>Product Promotion</span>
+                        </div>
+
+                        <div class="showcase-item">
+                            <span class="showcase-label">PRODUCT CONTENT</span>
+
+                            <img src="images/social-media-product-content.png" loading="lazy" decoding="async"
+                                alt="Product promotional graphics created for Choyeo Digitals">
+
+                            <p class="showcase-caption">
+                                <strong>Product content:</strong>
+                                Promotional graphics that explain product benefits at a glance
+                                while staying true to the Choyeo Digitals brand.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project">
+
+                    <div class="project-info">
+
+                        <span class="project-number">03</span>
+
+                        <p class="project-category">CRM &amp; CUSTOMER DATA</p>
+
+                        <h3>CRM Contact &amp; Lead Management</h3>
+
+                        <p>
+                            Set up and maintained a Zoho CRM with fictional practice data,
+                            keeping contacts and leads organized so follow-ups are not missed.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Zoho CRM</span>
                             <span>Contact Management</span>
                             <span>Lead Tracking</span>
                             <span>Customer Data</span>
                         </div>
+
                     </div>
 
                     <div class="project-visual">
+
                         <div class="showcase-item">
                             <span class="showcase-label">CONTACT MANAGEMENT</span>
-                            <img src="project-03-crm-management.jpg" loading="lazy" decoding="async"
-                                alt="CRM contact list with standardized fields">
+
+                            <img src="images/zoho-crm-contacts.jpg" loading="lazy" decoding="async"
+                                alt="Zoho CRM contact list using fictional practice data">
+
                             <p class="showcase-caption">
                                 <strong>Contact list:</strong>
                                 Standardized contact details and lead statuses so the list is
@@ -552,292 +263,457 @@
 
                         <div class="showcase-item">
                             <span class="showcase-label">CRM RECORD</span>
-                            <img src="project-03-crm-management.jpg" loading="lazy" decoding="async"
-                                alt="Individual CRM contact record with tasks and follow-ups">
+
+                            <video src="videos/zoho-contact-record.mp4" autoplay muted loop playsinline
+                                preload="metadata"
+                                aria-label="Screen recording of a Zoho CRM contact record with deals, tasks, and follow-up emails">
+                            </video>
+
                             <p class="showcase-caption">
                                 <strong>Contact record:</strong>
-                                Each contact is linked to its deals, meetings, tasks, and
-                                follow-up emails in one place.
+                                Linked each contact to its products, deals, meetings, tasks,
+                                and follow-up email workflows in one place.
                             </p>
                         </div>
+
                     </div>
 
                 </article>
 
 
-                <!-- PROJECT 5 — CLIENT ONBOARDING -->
-                <article class="project">
+                <section class="portfolio-sub-section">
+                    <h2 id="section-2">Admin &amp; Operations Systems</h2>
+                </section>
 
-                    <div class="project-info">
-                        <span class="project-number">05</span>
-                        <p class="project-category">CLIENT SUPPORT</p>
-                        <h3>Client Onboarding Workflow</h3>
-                        <p>
-                            Organized a smooth onboarding process for new clients, from intake
-                            form to welcome email and checklist.
-                        </p>
-                        <div class="project-tags">
-                            <span>Client Support</span>
-                            <span>Documentation</span>
-                            <span>Organization</span>
-                            <span>Workflow</span>
-                        </div>
-                    </div>
-
-                    <div class="project-visual image-showcase">
-                        <div class="showcase-item">
-                            <span class="showcase-label">INTAKE</span>
-                            <img src="project-05-client-onboarding.jpg" loading="lazy" decoding="async"
-                                alt="Client intake form and onboarding checklist">
-                            <p class="showcase-caption">
-                                <strong>Intake:</strong>
-                                A clear form that collects exactly what is needed before
-                                the project starts.
-                            </p>
-                        </div>
-
-                        <div class="showcase-item">
-                            <span class="showcase-label">WELCOME</span>
-                            <img src="project-05-client-onboarding.jpg" loading="lazy" decoding="async"
-                                alt="Client welcome email and onboarding checklist">
-                            <p class="showcase-caption">
-                                <strong>Welcome:</strong>
-                                A welcome email and checklist so every new client knows
-                                what happens next.
-                            </p>
-                        </div>
-                    </div>
-
-                </article>
-
-
-                <!-- PROJECT 6 — INVOICE & EXPENSE TRACKING -->
                 <article class="project project-reverse">
 
                     <div class="project-info">
-                        <span class="project-number">06</span>
+
+                        <span class="project-number">04</span>
+
                         <p class="project-category">ADMINISTRATION</p>
-                        <h3>Invoice &amp; Expense Tracking</h3>
+
+                        <h3>Email Organization System</h3>
+
                         <p>
-                            Maintained organized invoice records and a simple expense tracker,
-                            so finances stay clear and up to date.
+                            Built a simple inbox system that separates urgent messages from
+                            everything else, so important emails do not get buried.
                         </p>
+
                         <div class="project-tags">
-                            <span>Excel</span>
-                            <span>Record Keeping</span>
-                            <span>Administrative Support</span>
+                            <span>Email Management</span>
+                            <span>Organization</span>
+                            <span>Prioritization</span>
                         </div>
+
                     </div>
 
                     <div class="project-visual">
+
                         <div class="showcase-item">
-                            <span class="showcase-label">INVOICE LOG</span>
-                            <img src="project-06-invoice-tracking.jpg" loading="lazy" decoding="async"
-                                alt="Invoice tracking spreadsheet with organized records">
+                            <span class="showcase-label">BEFORE</span>
+
+                            <img src="images/email-system-before.png" loading="lazy" decoding="async"
+                                alt="Unorganized email inbox with read and unread messages mixed together">
+
                             <p class="showcase-caption">
-                                <strong>Invoice log:</strong>
-                                Organized records of invoices, due dates, and payment statuses.
+                                <strong>Before:</strong>
+                                Read and unread messages mixed together, with no clear way to
+                                tell what needs a reply first.
                             </p>
                         </div>
 
                         <div class="showcase-divider">
-                            <span>Expense Tracking</span>
-                        </div>
-
-                        <div class="showcase-item">
-                            <span class="showcase-label">EXPENSE SUMMARY</span>
-                            <img src="project-06-invoice-tracking.jpg" loading="lazy" decoding="async"
-                                alt="Expense tracking spreadsheet with categories and totals">
-                            <p class="showcase-caption">
-                                <strong>Expense summary:</strong>
-                                A simple table that tracks expenses by category and highlights
-                                totals at a glance.
-                            </p>
-                        </div>
-                    </div>
-
-                </article>
-
-
-                <!-- =================================================
-                     SECTION 3 — DATA, CONTENT & DESIGN
-                ================================================== -->
-
-                <section class="portfolio-sub-section">
-                    <h2 id="section-3">Data, Content &amp; Design</h2>
-                </section>
-
-                <!-- PROJECT 7 — EXCEL DATA MANAGEMENT -->
-                <article class="project">
-
-                    <div class="project-info">
-                        <span class="project-number">07</span>
-                        <p class="project-category">DATA MANAGEMENT</p>
-                        <h3>Excel Data Management</h3>
-                        <p>
-                            Organized spreadsheets, entered data, and cleaned records so the
-                            data is accurate, consistent, and easy to use.
-                        </p>
-                        <div class="project-tags">
-                            <span>Microsoft Excel</span>
-                            <span>Data Entry</span>
-                            <span>Data Cleaning</span>
-                            <span>Data Organization</span>
-                        </div>
-                    </div>
-
-                    <div class="project-visual image-showcase">
-                        <div class="showcase-item">
-                            <span class="showcase-label">BEFORE</span>
-                            <img src="project-04-excel-data.jpg" loading="lazy" decoding="async"
-                                alt="Messy spreadsheet with inconsistent formatting">
-                            <p class="showcase-caption">
-                                <strong>Before:</strong>
-                                Inconsistent formatting and disorganized columns.
-                            </p>
+                            <span>After Organization</span>
                         </div>
 
                         <div class="showcase-item">
                             <span class="showcase-label">AFTER</span>
-                            <img src="project-04-excel-data.jpg" loading="lazy" decoding="async"
-                                alt="Clean spreadsheet with organized columns and summary">
+
+                            <img src="images/email-system-after.png" loading="lazy" decoding="async"
+                                alt="Organized email inbox sorted by priority and purpose">
+
                             <p class="showcase-caption">
                                 <strong>After:</strong>
-                                Cleaned data, organized columns, and a summary table for quick
-                                interpretation.
+                                Sorted messages by priority and purpose, archived low-priority
+                                emails, and kept high-priority ones in the main inbox for
+                                quick access.
                             </p>
                         </div>
+
                     </div>
 
                 </article>
 
 
-                <!-- PROJECT 8 — CONTENT CALENDAR -->
-                <article class="project project-reverse">
+                <article class="project">
 
                     <div class="project-info">
-                        <span class="project-number">08</span>
-                        <p class="project-category">CONTENT PLANNING</p>
-                        <h3>Social Media Content Calendar</h3>
+
+                        <span class="project-number">05</span>
+
+                        <p class="project-category">SCHEDULING</p>
+
+                        <h3>Calendar &amp; Scheduling Management</h3>
+
                         <p>
-                            Built a multi-platform content plan so every post has a clear
-                            platform, goal, and purpose before it is created.
+                            Designed a weekly schedule for a fictional client that organizes
+                            meetings, deadlines, and admin tasks without conflicts.
                         </p>
+
                         <div class="project-tags">
-                            <span>Content Planning</span>
-                            <span>Social Media</span>
+                            <span>Google Calendar</span>
                             <span>Scheduling</span>
+                            <span>Organization</span>
                         </div>
+
                     </div>
 
                     <div class="project-visual">
+
                         <div class="showcase-item">
-                            <span class="showcase-label">CONTENT PLAN</span>
-                            <img src="project-07-content-calendar.jpg" loading="lazy" decoding="async"
-                                alt="Content calendar tracking posts by platform and goal">
+                            <span class="showcase-label">BEFORE</span>
+
+                            <video src="videos/before-calendar-sample.mp4" autoplay muted loop playsinline
+                                preload="metadata"
+                                aria-label="Screen recording of a cluttered weekly calendar with overlapping events">
+                            </video>
+
                             <p class="showcase-caption">
-                                <strong>The plan:</strong>
-                                A calendar that tracks each post by platform, content type,
-                                goal, and call to action.
+                                <strong>Before:</strong>
+                                Overlapping commitments, inconsistent event organization,
+                                and little time left for focused work.
                             </p>
                         </div>
 
                         <div class="showcase-divider">
-                            <span>From Plan to Post</span>
+                            <span>After Organization</span>
                         </div>
 
                         <div class="showcase-item">
-                            <span class="showcase-label">CONTENT IMPLEMENTATION</span>
-                            <img src="project-07-content-calendar.jpg" loading="lazy" decoding="async"
-                                alt="Posts created from the content calendar">
+                            <span class="showcase-label">AFTER</span>
+
+                            <video src="videos/after-calendar-sample.mp4" autoplay muted loop playsinline
+                                preload="metadata"
+                                aria-label="Screen recording of a reorganized, color-coded weekly calendar with no conflicts">
+                            </video>
+
                             <p class="showcase-caption">
-                                <strong>The result:</strong>
-                                Planned ideas turned into finished posts, adapted to each
-                                platform's format and message.
+                                <strong>After:</strong>
+                                Resolved conflicts, color-coded events and tasks by type, and
+                                balanced the week to leave room for focused work.
                             </p>
                         </div>
+
                     </div>
 
                 </article>
 
 
-                <!-- PROJECT 9 — CANVA DESIGN -->
-                <article class="project">
-
-                    <div class="project-info">
-                        <span class="project-number">09</span>
-                        <p class="project-category">GRAPHIC DESIGN</p>
-                        <h3>Canva Graphic Design</h3>
-                        <p>
-                            Designed branded social media graphics with clear messaging and
-                            a consistent look across platforms.
-                        </p>
-                        <div class="project-tags">
-                            <span>Canva</span>
-                            <span>Graphic Design</span>
-                            <span>Visual Content</span>
-                            <span>Branding</span>
-                        </div>
-                    </div>
-
-                    <div class="project-visual image-showcase">
-                        <div class="showcase-item">
-                            <span class="showcase-label">SOCIAL MEDIA DESIGNS</span>
-                            <img src="project-08-canva-design.jpg" loading="lazy" decoding="async"
-                                alt="Social media graphics created in Canva">
-                            <p class="showcase-caption">
-                                <strong>Designs:</strong>
-                                Educational posts, promotions, and interactive content
-                                built with a consistent brand style.
-                            </p>
-                        </div>
-
-                        <div class="showcase-item">
-                            <span class="showcase-label">PRODUCT CONTENT</span>
-                            <img src="project-08-canva-design.jpg" loading="lazy" decoding="async"
-                                alt="Product promotional graphics created in Canva">
-                            <p class="showcase-caption">
-                                <strong>Product content:</strong>
-                                Promotional graphics that explain product benefits at a
-                                glance while staying on-brand.
-                            </p>
-                        </div>
-                    </div>
-
-                </article>
-
-
-                <!-- PROJECT 10 — VIDEO EDITING -->
                 <article class="project project-reverse">
 
                     <div class="project-info">
-                        <span class="project-number">10</span>
-                        <p class="project-category">VIDEO EDITING</p>
-                        <h3>Short-Form Video Editing</h3>
+
+                        <span class="project-number">06</span>
+
+                        <p class="project-category">FILE MANAGEMENT</p>
+
+                        <h3>Digital File Organization</h3>
+
                         <p>
-                            Edited short videos and promotional reels, arranging clips,
-                            adding transitions, and preparing them for social media.
+                            Reorganized a fictional client’s files with a clear folder
+                            hierarchy and a consistent naming convention.
                         </p>
+
                         <div class="project-tags">
-                            <span>CapCut</span>
-                            <span>Video Editing</span>
-                            <span>Content Creation</span>
+                            <span>File Management</span>
+                            <span>Organization</span>
+                            <span>Documentation</span>
                         </div>
+
                     </div>
 
                     <div class="project-visual">
+
                         <div class="showcase-item">
-                            <span class="showcase-label">SHORT-FORM REEL</span>
-                            <video controls preload="metadata" muted>
-                                <source src="project-09-video-editing.mp4" type="video/mp4">
-                                Your browser does not support video playback.
+                            <span class="showcase-label">BEFORE</span>
+
+                            <video src="videos/before-file-organization-sample.mp4" autoplay muted loop playsinline
+                                preload="metadata"
+                                aria-label="Screen recording of scattered files with inconsistent names">
                             </video>
+
                             <p class="showcase-caption">
-                                <strong>The edit:</strong>
-                                Clips arranged with transitions, text, and pacing tuned
-                                for short-form platforms.
+                                <strong>Before:</strong>
+                                Files scattered across folders with inconsistent names,
+                                making documents hard to find.
                             </p>
                         </div>
+
+                        <div class="showcase-divider">
+                            <span>After Organization</span>
+                        </div>
+
+                        <div class="showcase-item">
+                            <span class="showcase-label">AFTER</span>
+
+                            <video src="videos/after-file-organization-sample.mp4" autoplay muted loop playsinline
+                                preload="metadata"
+                                aria-label="Screen recording of files organized into a clear folder hierarchy">
+                            </video>
+
+                            <p class="showcase-caption">
+                                <strong>After:</strong>
+                                Created a folder hierarchy, grouped related files, and applied
+                                consistent names so everything is easy to find and share.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project">
+
+                    <div class="project-info">
+
+                        <span class="project-number">07</span>
+
+                        <p class="project-category">DOCUMENTATION</p>
+
+                        <h3>Document Formatting</h3>
+
+                        <p>
+                            Turned an unstructured business proposal into a clean,
+                            professional document that is easy to scan and review.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Microsoft Word</span>
+                            <span>Formatting</span>
+                            <span>Documentation</span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-visual">
+
+                        <div class="showcase-item">
+                            <span class="showcase-label">BEFORE</span>
+
+                            <video src="videos/before-document-proposal-sample.mp4" autoplay muted loop playsinline
+                                preload="metadata"
+                                aria-label="Screen recording of an unformatted business proposal document">
+                            </video>
+
+                            <p class="showcase-caption">
+                                <strong>Before:</strong>
+                                Inconsistent formatting and no clear sections, so key
+                                information was hard to find.
+                            </p>
+                        </div>
+
+                        <div class="showcase-divider">
+                            <span>After Formatting</span>
+                        </div>
+
+                        <div class="showcase-item">
+                            <span class="showcase-label">AFTER</span>
+
+                            <video src="videos/after-document-proposal-sample.mp4" autoplay muted loop playsinline
+                                preload="metadata"
+                                aria-label="Screen recording of a professionally formatted business proposal with tables">
+                            </video>
+
+                            <p class="showcase-caption">
+                                <strong>After:</strong>
+                                Organized the content into clear sections, applied consistent
+                                formatting, and added tables for quick review.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <section class="portfolio-sub-section">
+                    <h2 id="section-3">Data, Reporting &amp; Research</h2>
+                </section>
+
+                <article class="project project-reverse">
+
+                    <div class="project-info">
+
+                        <span class="project-number">08</span>
+
+                        <p class="project-category">DATA MANAGEMENT</p>
+
+                        <h3>Data Cleaning &amp; Spreadsheet Organization</h3>
+
+                        <p>
+                            Cleaned a fictional customer contact database so it is accurate,
+                            consistent, and ready to use.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Excel</span>
+                            <span>Data Cleaning</span>
+                            <span>Formatting</span>
+                            <span>Data Organization</span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-visual">
+
+                        <div class="showcase-item">
+                            <span class="showcase-label">BEFORE</span>
+
+                            <img src="images/data-cleaning-before.jpg" loading="lazy" decoding="async"
+                                alt="Spreadsheet of customer contacts with duplicate rows and inconsistent formatting">
+
+                            <p class="showcase-caption">
+                                <strong>Before:</strong>
+                                Duplicate entries, inconsistent formatting, and disorganized
+                                columns.
+                            </p>
+                        </div>
+
+                        <div class="showcase-divider">
+                            <span>After Organization</span>
+                        </div>
+
+                        <div class="showcase-item">
+                            <span class="showcase-label">AFTER</span>
+
+                            <img src="images/data-cleaning-after.jpg" loading="lazy" decoding="async"
+                                alt="Cleaned customer database with organized columns, a summary table, and a chart">
+
+                            <p class="showcase-caption">
+                                <strong>After:</strong>
+                                Removed duplicates, standardized formatting, organized columns,
+                                added data checks, and built a summary table and chart to make
+                                the data easier to interpret.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project">
+
+                    <div class="project-info">
+
+                        <span class="project-number">09</span>
+
+                        <p class="project-category">REPORTING</p>
+
+                        <h3>Sales Tracking &amp; Reporting</h3>
+
+                        <p>
+                            Built a sales tracker that turns raw transactions into a monthly
+                            report, so a small shop owner can see how sales are performing
+                            at a glance.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Excel</span>
+                            <span>Data Entry</span>
+                            <span>Formulas</span>
+                            <span>Reporting</span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-visual image-showcase">
+
+                        <div class="showcase-item">
+                            <span class="showcase-label">SALES TRACKER</span>
+
+                            <img src="images/sales-tracker-sample.jpg" loading="lazy" decoding="async"
+                                alt="Sales tracker spreadsheet with organized transaction data and calculated revenue">
+
+                            <p class="showcase-caption">
+                                <strong>Tracker:</strong>
+                                Organized transactions into structured fields with consistent
+                                formatting and calculated revenue.
+                            </p>
+                        </div>
+
+                        <div class="showcase-item">
+                            <span class="showcase-label">SALES REPORT</span>
+
+                            <img src="images/sales-report-sample.jpg" loading="lazy" decoding="async"
+                                alt="Monthly sales report showing key metrics, summaries, and charts">
+
+                            <p class="showcase-caption">
+                                <strong>Report:</strong>
+                                Summarized the data into a monthly report with key metrics,
+                                tables, and charts that highlight sales performance.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project project-reverse">
+
+                    <div class="project-info">
+
+                        <span class="project-number">10</span>
+
+                        <p class="project-category">RESEARCH</p>
+
+                        <h3>Internet Research &amp; Competitor Analysis</h3>
+
+                        <p>
+                            Researched competing digital product businesses and compared them
+                            side by side to surface patterns, gaps, and recommendations.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Internet Research</span>
+                            <span>Data Collection</span>
+                            <span>Excel</span>
+                            <span>Analysis</span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-visual image-showcase">
+
+                        <div class="showcase-item">
+                            <span class="showcase-label">RESEARCH</span>
+
+                            <img src="images/internet-research-sample.jpg" loading="lazy" decoding="async"
+                                alt="Spreadsheet of researched product, pricing, and category information">
+
+                            <p class="showcase-caption">
+                                <strong>Research:</strong>
+                                Gathered product, pricing, category, and business details from
+                                fictional online sources into one spreadsheet.
+                            </p>
+                        </div>
+
+                        <div class="showcase-item">
+                            <span class="showcase-label">COMPETITOR ANALYSIS</span>
+
+                            <img src="images/competitor-analysis-sample.jpg" loading="lazy" decoding="async"
+                                alt="Competitor comparison table with key findings and recommendations">
+
+                            <p class="showcase-caption">
+                                <strong>Analysis:</strong>
+                                Compared competitors in one table, highlighted key differences
+                                and patterns, and added findings with recommendations.
+                            </p>
+                        </div>
+
                     </div>
 
                 </article>
@@ -848,13 +724,12 @@
 
     </main>
 
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
     <footer class="footer">
+
         <div class="container footer-container">
+
             <div>
-                <a href="index.html#home" class="logo">Mehwish</a>
+                <a href="index.html#home" class="logo">Mehwish Asghar</a>
                 <p>Admin &amp; Operations Support for Digital Creators and Small Online Businesses</p>
             </div>
 
@@ -862,12 +737,18 @@
                 <a href="index.html#home">Home</a>
                 <a href="portfolio.html">Portfolio</a>
                 <a href="index.html#contact">Contact</a>
-                <a href="https://www.instagram.com/12___________mimi46?dlrf=MTk2ejZlanU2ZXNyZQ==" target="_blank"
+                <a href="https://www.instagram.com/12___________mimi46" target="_blank"
                     rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/in/mehwish-asghar-aba1ba385/" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://calendly.com/mehwishasghar958/new-meeting" target="_blank"
+                    rel="noopener noreferrer">Book a Call</a>
             </div>
 
-            <p class="copyright">&copy; 2026 Mehwish. All rights reserved.</p>
+            <p class="copyright">&copy; 2026 Mehwish Asghar. All rights reserved.</p>
+
         </div>
+
     </footer>
 
     <script>
@@ -887,3 +768,17 @@
 
             navLinks.querySelectorAll("a").forEach((link) => {
                 link.addEventListener("click", () => setMenu(false));
+            });
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape" && navLinks.classList.contains("open")) {
+                    setMenu(false);
+                    menuToggle.focus();
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
