@@ -1,464 +1,1288 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mehwish | Professional Virtual Assistant</title>
-    <meta name="description" content="Professional Virtual Assistant specializing in inbox management, Canva design, Excel organization, and social media scheduling.">
-    
-    <!-- Google Fonts -->
+
+    <title>Mehwish Asghar | Home</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
 
-    <style>
-        /* --- RESET & BASE STYLES --- */
-        :root {
-            --primary: #1f1c1a;
-            --primary-hover: #000000;
-            --text-dark: #2e2824;
-            --text-light: #6e655c;
-            --bg-light: #f2ebdd;
-            --cream: #f8f4ea;
-            --white: #fffdf8;
-            --border: #e4dacb;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; line-height: 1.6; color: var(--text-dark); background: var(--cream); }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-        .section { padding: 80px 0; }
-        .section-light { background-color: var(--bg-light); }
-        .text-center { text-align: center; }
-        
-        /* --- TYPOGRAPHY --- */
-        .eyebrow { text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.85rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
-        h1 { font-size: 3rem; font-weight: 700; line-height: 1.2; margin-bottom: 15px; }
-        h2 { font-size: 2rem; font-weight: 700; margin-bottom: 20px; }
-        h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 10px; }
-        p { color: var(--text-light); margin-bottom: 15px; }
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        /* --- BUTTONS --- */
-        .button { display: inline-block; padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; border: none; }
-        .button-primary { background: var(--primary); color: var(--white); }
-        .button-primary:hover { background: var(--primary-hover); }
-        .button-secondary { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
-        .button-secondary:hover { background: var(--bg-light); }
+    <link rel="icon" type="image/png" href="images/site-icon.png">
 
-        /* --- NAVIGATION --- */
-        .navbar { position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 1000; padding: 15px 0; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.9rem; font-weight: 600; font-style: italic; letter-spacing: 0.04em; line-height: 1; color: var(--primary); display: inline-flex; align-items: center; gap: 10px; }
-        .logo::after { content: ""; display: inline-block; width: 28px; height: 1px; background: currentColor; opacity: 0.6; }
-        .nav-links { display: flex; gap: 30px; align-items: center; }
-        .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-dark); }
-        .nav-links a:hover { color: var(--primary); }
-        .menu-button { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-        /* --- HERO --- */
-        .hero { padding: 100px 0 80px; }
-        .hero-container { display: flex; align-items: center; gap: 60px; }
-        .hero-content { flex: 1; }
-        .hero-description { font-size: 1.1rem; margin-bottom: 30px; }
-        .hero-buttons { display: flex; gap: 15px; margin-bottom: 25px; }
-        .availability { font-size: 0.9rem; color: var(--text-light); font-weight: 500; }
-        
-        /* NEW: Profile Image Styling */
-        .hero-avatar { 
-            flex: 0 0 320px; 
-            height: 320px; 
-            border-radius: 24px; 
-            overflow: hidden; 
-            border: 4px solid var(--white); 
-            box-shadow: 0 20px 40px rgba(31, 28, 26, 0.12); 
-        }
-        .hero-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    <!-- SEO -->
+    <meta name="description" content="Mehwish Asghar — admin & operations virtual assistant portfolio showcasing projects and skills.">
 
-        /* --- CARDS & GRIDS --- */
-        .section-heading { text-align: center; max-width: 700px; margin: 0 auto 50px; }
-        .capability-grid, .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card { background: var(--white); padding: 35px; border-radius: 16px; border: 1px solid var(--border); transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); border-color: var(--primary); }
-        .card-icon { font-size: 2rem; margin-bottom: 15px; }
-        .card ul { margin-top: 15px; }
-        .card li { margin-bottom: 10px; color: var(--text-light); font-size: 0.95rem; padding-left: 25px; position: relative; }
-        .card li::before { content: "✓"; color: var(--primary); position: absolute; left: 0; font-weight: 700; }
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:title" content="Mehwish Asghar | Portfolio">
+    <meta property="og:description"
+        content="A portfolio website to showcase my skills and experience in admin support and content management.">
+    <meta property="og:type" content="website">
+    <!-- EDIT: uncomment when live -->
+    <!-- <meta property="og:url" content="https://yourusername.github.io/your-repo/"> -->
+    <!-- <meta property="og:image" content="https://yourusername.github.io/your-repo/images/portfolio-preview.jpg"> -->
 
-        /* --- ABOUT --- */
-        .about-container { display: flex; gap: 60px; align-items: center; }
-        .about-image { 
-            flex: 1; 
-            border-radius: 16px; 
-            overflow: hidden; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
-        }
-        .about-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .about-content { flex: 1; }
-        .strengths { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
-        .strength strong { display: block; color: var(--text-dark); margin-bottom: 5px; }
-        .strength p { font-size: 0.9rem; margin: 0; }
-
-        /* --- WORKSPACE GALLERY (NEW) --- */
-        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
-        .gallery-item { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .gallery-item img { width: 100%; height: 200px; object-fit: cover; display: block; transition: 0.3s; }
-        .gallery-item img:hover { transform: scale(1.03); }
-
-        /* --- WORKFLOW --- */
-        .workflow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-        .workflow-step { text-align: center; padding: 20px; }
-        .workflow-step span { display: inline-block; width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; line-height: 40px; font-weight: 700; margin-bottom: 15px; }
-
-        /* --- TOOLS --- */
-        .tool-category { margin-bottom: 40px; }
-        .tool-category-title { font-size: 1.1rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; border-bottom: 2px solid var(--border); padding-bottom: 10px; display: inline-block; }
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
-        .tool-card { background: var(--white); padding: 25px; border-radius: 12px; border: 1px solid var(--border); text-align: center; transition: 0.3s; }
-        .tool-card:hover { border-color: var(--primary); }
-        .tool-card .tool-icon { font-size: 2rem; margin-bottom: 10px; }
-        .tool-card h3 { font-size: 1rem; margin-bottom: 8px; }
-        .tool-card p { font-size: 0.85rem; margin: 0; }
-
-        /* --- CONTACT --- */
-        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-        .contact-details div { margin-bottom: 25px; }
-        .contact-details span { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); margin-bottom: 5px; }
-        .contact-details a, .contact-details p { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); margin: 0; }
-        .contact-details a:hover { color: var(--primary); }
-
-        /* --- CONTACT FORM --- */
-        .contact-form { background: var(--white); padding: 40px; border-radius: 16px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; }
-        .contact-form h3 { font-size: 1.25rem; margin-bottom: 4px; }
-        .contact-form > p { font-size: 0.9rem; margin-bottom: 10px; }
-        .contact-form label { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); margin-top: 8px; }
-        .contact-form input, .contact-form select, .contact-form textarea { font-family: inherit; font-size: 1rem; width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-light); color: var(--text-dark); }
-        .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: none; border-color: var(--primary); }
-        .contact-form textarea { resize: vertical; }
-        .contact-form button { align-self: flex-start; margin-top: 12px; font-family: inherit; }
-        .contact-form button:disabled { opacity: 0.6; cursor: not-allowed; }
-        .form-status { font-size: 0.9rem; font-weight: 600; color: var(--primary); margin: 8px 0 0; min-height: 1em; }
-
-        /* --- FOOTER --- */
-        .footer { background: var(--text-dark); color: var(--white); padding: 60px 0 30px; }
-        .footer-container { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 30px; }
-        .footer .logo { color: var(--white); margin-bottom: 10px; display: block; }
-        .footer p { color: #94a3b8; font-size: 0.9rem; }
-        .footer-links { display: flex; gap: 25px; }
-        .footer-links a { color: #cbd5e1; font-size: 0.95rem; }
-        .footer-links a:hover { color: var(--white); }
-        .copyright { width: 100%; text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #334155; color: #64748b; font-size: 0.85rem; }
-
-        /* --- MOBILE RESPONSIVE --- */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.6rem; }
-            .hero-container, .about-container, .contact-container { flex-direction: column; text-align: center; }
-            .hero-buttons { justify-content: center; }
-            .hero-avatar { margin: 0 auto; width: 250px; height: 250px; }
-            .strengths { grid-template-columns: 1fr; text-align: left; }
-            .gallery-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 20px; border-bottom: 1px solid var(--border); gap: 15px; }
-            .nav-links.open { display: flex; }
-            .menu-button { display: block; }
-            .footer-container { flex-direction: column; text-align: center; align-items: center; }
-            .footer-links { flex-wrap: wrap; justify-content: center; }
-        }
-    </style>
 </head>
+
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
     <header class="navbar">
+
         <div class="container nav-container">
-            <a href="#home" class="logo">Mehwish</a>
-            <nav class="nav-links" id="main-nav">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#tools">Tools</a>
-                <a href="#contact">Contact</a>
-                <a href="mailto:mehwishasghar958@gmail.com" class="button button-primary">Hire Me</a>
+
+            <a href="#home" class="logo">
+                Mehwish Asghar
+            </a>
+
+            <nav class="nav-links" id="main-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <div class="nav-dropdown">
+                    <a href="portfolio.html" class="dropdown-toggle">
+                        Portfolio
+                    </a>
+
+                    <div class="dropdown-menu">
+                        <a href="portfolio.html#section-1">Creator &amp; Online Business Support</a>
+                        <a href="portfolio.html#section-2">Admin &amp; Operations Systems</a>
+                        <a href="portfolio.html#section-3">Data, Reporting &amp; Research</a>
+                    </div>
+                </div>
+                <a href="index.html#tools">Tools</a>
+                <a href="index.html#resume">Resume</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="https://calendly.com/mehwishasghar958/new-meeting" target="_blank" rel="noopener noreferrer"
+                    class="button button-primary nav-cta">Book a Call</a>
             </nav>
-            <button class="menu-button" onclick="document.getElementById('main-nav').classList.toggle('open')">☰</button>
+
+            <!-- Mobile menu button -->
+            <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false"
+                aria-controls="main-nav">☰</button>
+
         </div>
+
     </header>
 
+
     <main>
-        <!-- HERO SECTION -->
+
+    <!-- =====================================================
+        HERO / HOME
+    ====================================================== -->
+
         <section id="home" class="hero">
+
             <div class="container hero-container">
+
                 <div class="hero-content">
-                    <p class="eyebrow">PROFESSIONAL VIRTUAL ASSISTANT</p>
-                    <h1>Hi, I'm Mehwish!</h1>
-                    <h2>Admin & Operations Support for Digital Creators and Small Online Businesses</h2>
-                    <p class="hero-description">
-                        I organize your inbox, manage your client records, and handle your content scheduling. I build the behind-the-scenes systems that make your business look professional and run smoothly, so you can focus on what you do best.
+
+                    <p class="eyebrow">
+                        ADMIN &amp; OPERATIONS VIRTUAL ASSISTANT
                     </p>
+
+                    <h1>
+                        Hi, I'm Mehwish!
+                    </h1>
+
+                    <h2>
+                        Admin &amp; Operations Support for Digital Creators and Small Online Businesses
+                    </h2>
+
+                    <p class="hero-description">
+                        I organize your inbox, client records, content, and build the behind-the-scenes setup that
+                        makes your business look professional and run smoothly, so you can spend more of your time
+                        doing what only you can do.
+                    </p>
+
                     <div class="hero-buttons">
-                        <a href="#services" class="button button-primary">View My Services</a>
-                        <a href="mailto:mehwishasghar958@gmail.com" class="button button-secondary">Email Me</a>
+
+                        <a href="portfolio.html" class="button button-primary">
+                            View My Work
+                        </a>
+
+                        <a href="https://calendly.com/mehwishasghar958/new-meeting" target="_blank"
+                            rel="noopener noreferrer" class="button button-secondary">Book a Free 15-Min Call</a>
+
                     </div>
-                    <p class="availability">📍 Based in Pakistan · Open to freelance & part-time remote work</p>
+
+                    <p class="availability">
+                        Pakistan (UTC+5) · Flexible hours · Open to full/part-time and freelance roles
+                    </p>
+
                 </div>
-                <!-- PICTURE 1 GOES HERE -->
+
+
+                <!-- Hero Avatar -->
+
                 <div class="hero-avatar">
-                    <img src="profile.jpg" alt="Mehwish - Professional Virtual Assistant">
+
+                    <img src="images/profile-picture-1.png" alt="Mehwish's profile picture">
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- CAPABILITIES SECTION -->
-        <section class="section section-light">
+
+        <!-- =====================================================
+             WHAT I CAN HELP WITH
+        ====================================================== -->
+
+        <section class="capabilities">
+
             <div class="container">
+
                 <div class="section-heading">
-                    <p class="eyebrow">WHAT I CAN HELP WITH</p>
-                    <h2>Keeping your business and work organized, one task at a time.</h2>
+
+                    <p class="eyebrow">
+                        WHAT I CAN HELP WITH
+                    </p>
+
+                    <h2>
+                        Keeping your business and work organized,
+                        one task at a time.
+                    </h2>
+
                 </div>
+
+
                 <div class="capability-grid">
-                    <article class="card">
-                        <div class="card-icon">📩</div>
-                        <h3>Inbox & Admin Management</h3>
+
+                    <!-- Card 1 -->
+                    <article class="capability-card">
+
+                        <div class="card-icon">
+                            📩
+                        </div>
+
+                        <h3>Inbox &amp; Admin Management</h3>
+
                         <ul>
                             <li>Organized inbox and calendar</li>
                             <li>Easy-to-find files</li>
                             <li>Invoice and receipt tracking</li>
                         </ul>
+
                     </article>
-                    <article class="card">
-                        <div class="card-icon">📁</div>
-                        <h3>CRM & Client Onboarding</h3>
+
+
+                    <!-- Card 2 -->
+                    <article class="capability-card">
+
+                        <div class="card-icon">
+                            📁
+                        </div>
+
+                        <h3>CRM &amp; Client Onboarding</h3>
+
                         <ul>
                             <li>Accurate contact records</li>
                             <li>Follow-ups that never slip</li>
                             <li>Smooth client onboarding setup</li>
                         </ul>
+
                     </article>
-                    <article class="card">
-                        <div class="card-icon">📅</div>
-                        <h3>Content & Brand Support</h3>
+
+
+                    <!-- Card 3 -->
+                    <article class="capability-card">
+
+                        <div class="card-icon">
+                            📊
+                        </div>
+
+                        <h3>Data, Research &amp; Systems</h3>
+
                         <ul>
-                            <li>Canva designs and graphics</li>
-                            <li>Social media scheduling</li>
-                            <li>Video editing (CapCut)</li>
+                            <li>Clean data and clear reports</li>
+                            <li>Competitor and lead research</li>
+                            <li>Custom trackers and systems</li>
+                        </ul>
+
+                    </article>
+
+
+                    <!-- Card 4 -->
+                    <article class="capability-card">
+
+                        <div class="card-icon">
+                            📅
+                        </div>
+
+                        <h3>Content &amp; Brand Support</h3>
+
+                        <ul>
+                            <li>Brand and media kit design</li>
+                            <li>Graphics and post scheduling</li>
+                            <li>Video editing</li>
                         </ul>
                     </article>
+
                 </div>
+
+                <p class="addon-note">
+                    <span class="addon-note-icon">🌐</span>
+                    <span><strong>Additional web support:</strong> develop and keep your site fresh, mobile-friendly, and ready to bring in customers and leads.</span>
+                </p>
+
             </div>
+
         </section>
 
-        <!-- ABOUT SECTION -->
-        <section id="about" class="section">
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section id="about" class="about section">
+
             <div class="container about-container">
-                <!-- PICTURE 2 GOES HERE -->
+
                 <div class="about-image">
-                    <img src="about.jpg" alt="Mehwish working">
+
+                    <img src="images/stockimage1.png"
+                        alt="An image of Mehwish and her work experience">
+
                 </div>
+
+
                 <div class="about-content">
-                    <p class="eyebrow">ABOUT ME</p>
-                    <h2>Organized, detail-oriented, and always ready to learn.</h2>
-                    <p>I’m a detail-oriented Virtual Assistant based in Pakistan. I specialize in helping creators and small businesses stay organized and efficient. From managing cluttered inboxes to designing eye-catching Canva graphics and keeping Excel sheets perfectly organized, I handle the behind-the-scenes work so you can focus on growing your business.</p>
-                    <p>I learn new tools quickly, communicate clearly, and make sure no detail is ever missed.</p>
+
+                    <p class="eyebrow">
+                        ABOUT ME
+                    </p>
+
+                    <h2>
+                        Organized, detail-oriented,
+                        and always ready to learn.
+                    </h2>
+
+                    <p>
+                        I'm a virtual assistant based in Pakistan. On the side, I also run my own small digital
+                        product shop, where I manage everything from product listings and customer inquiries to
+                        content scheduling and product creation. Along the way I've built hands-on experience in
+                        data entry, records verification, and written content.
+                    </p>
+
+                    <p>
+                        I'm most comfortable with the tools creators and small online businesses actually use: Google
+                        Workspace, Notion, Asana, Canva, Excel, and Zoho CRM. I learn new tools quickly,
+                        communicate clearly in writing, and send regular updates if needed so you always know where
+                        things stand.
+                    </p>
+
+
                     <div class="strengths">
-                        <div class="strength"><strong>✓ Attention to Detail</strong><p>Verified and organized data with 100% accuracy.</p></div>
-                        <div class="strength"><strong>✓ Organization</strong><p>Built clear folder structures and scheduling systems.</p></div>
-                        <div class="strength"><strong>✓ Adaptability</strong><p>Quickly master new software and business workflows.</p></div>
-                        <div class="strength"><strong>✓ Reliability</strong><p>Consistent communication and on-time delivery.</p></div>
+
+                        <div class="strength">
+                            <strong>✓ Attention to Detail</strong>
+                            <p>
+                                Records and entries checked carefully against source documents before anything is
+                                sent out.
+                            </p>
+                        </div>
+
+                        <div class="strength">
+                            <strong>✓ Organization</strong>
+                            <p>
+                                Built Notion and Google Sheets systems for content, listings, and scheduling across
+                                multiple digital products.
+                            </p>
+                        </div>
+
+                        <div class="strength">
+                            <strong>✓ Adaptability</strong>
+                            <p>
+                                Learned Zoho CRM and Asana through hands-on practice and applied them in real
+                                projects.
+                            </p>
+                        </div>
+
+                        <div class="strength">
+                            <strong>✓ Reliability</strong>
+                            <p>
+                                Met deadlines consistently and kept clients updated with short, clear summaries.
+                            </p>
+                        </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- WORKSPACE GALLERY SECTION (NEW) -->
-        <section class="section section-light">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">MY WORKSPACE</p>
-                    <h2>A glimpse into my professional setup</h2>
-                    <p>I take pride in my organized, dedicated workspace that allows me to deliver my best work for your business.</p>
-                </div>
-                <div style="text-align: center; margin-top: 30px;">
- <a href="portfolio.html" class="button button-primary">View Profile</a>
-                </div> 
-            </div>
-        </section>
 
-        <!-- SERVICES SECTION -->
-        <section id="services" class="section">
+        <!-- =====================================================
+             SERVICES
+        ====================================================== -->
+
+        <section id="services" class="services section section-light">
+
             <div class="container">
+
                 <div class="section-heading">
-                    <p class="eyebrow">SERVICES</p>
-                    <h2>How I can support you</h2>
-                    <p>Reliable admin, operations, and creator support that keeps your everyday work organized and seamless.</p>
+
+                    <p class="eyebrow">
+                        SERVICES
+                    </p>
+
+                    <h2>
+                        How I can support you
+                    </h2>
+
+                    <p>
+                        Reliable admin, operations, and creator support that keeps your everyday work organized and seamless.
+                    </p>
+
                 </div>
+
+
                 <div class="service-grid">
-                    <article class="card">
-                        <div class="card-icon">📩</div>
-                        <h3>Inbox, Calendar & File Management</h3>
-                        <p>A clutter-free inbox, a schedule that runs smoothly, and files you can find in seconds.</p>
+
+                    <!-- Service 1 -->
+                    <article class="service-card">
+
+                        <div class="card-icon">
+                            📩
+                        </div>
+
+                        <h3>
+                            Inbox, Calendar &amp; File Management
+                        </h3>
+
+                        <p>
+                            A clutter-free inbox, a schedule that runs smoothly, and files you can find in seconds.
+                        </p>
+
                         <ul>
                             <li>Organized inbox with labels, filters, and brand outreach handling</li>
                             <li>Conflict-free calendar scheduling</li>
                             <li>Clear folder structures and naming conventions</li>
+                            <li>Polished documents and proposals</li>
                             <li>Invoice preparation and receipt tracking</li>
                         </ul>
+
                     </article>
-                    <article class="card">
-                        <div class="card-icon">📁</div>
-                        <h3>CRM & Customer Records</h3>
-                        <p>No lead slips through, and every new client gets a smooth, professional start.</p>
+
+
+                    <!-- Service 2 -->
+                    <article class="service-card">
+
+                        <div class="card-icon">
+                            📁
+                        </div>
+
+                        <h3>
+                            CRM &amp; Customer Records
+                        </h3>
+
+                        <p>
+                            No lead slips through, and every new client gets a smooth, professional start.
+                        </p>
+
                         <ul>
                             <li>Up-to-date contact and lead records</li>
                             <li>Follow-up tracking and task reminders</li>
                             <li>Customer inquiries handled and answered</li>
-                            <li>Backend client onboarding: intake forms, welcome emails, and checklists</li>
+                            <li>Verified, duplicate-free records</li>
+                            <li><b>Backend client onboarding:</b> intake forms, welcome emails, and onboarding checklists</li>
                         </ul>
+
                     </article>
-                    <article class="card">
-                        <div class="card-icon">📅</div>
-                        <h3>Content & Creator Support</h3>
-                        <p>A consistent brand, and a content calendar that posts itself.</p>
+
+
+                    <!-- Service 3 -->
+                    <article class="service-card">
+
+                        <div class="card-icon">
+                            🔎
+                        </div>
+
+                        <h3>
+                            Spreadsheets, Data, Research &amp; Systems
+                        </h3>
+
+                        <p>
+                            Messy information becomes clean data, clear trackers, and systems that save you hours.
+                        </p>
+
                         <ul>
-                            <li>Eye-catching Canva graphics and templates</li>
-                            <li>Social media scheduling and management</li>
-                            <li>Video editing and promotional reels (CapCut)</li>
-                            <li>Organizing Excel sheets and data tracking</li>
+                            <li>Clean, standardized data with duplicates removed</li>
+                            <li>Tracking sheets and monthly summaries you can act on</li>
+                            <li>Competitor and lead list research</li>
+                            <li>Ongoing updates and maintenance of existing systems</li>
+                            <li><b>Custom systems:</b> trackers, dashboards, and automated workflows built to fit your business</li>
+                        </ul>
+
+                    </article>
+
+
+                    <!-- Service 4 -->
+                    <article class="service-card">
+
+                        <div class="card-icon">
+                            📅
+                        </div>
+
+                        <h3>
+                            Content, Brand Kits &amp; Creator Support
+                        </h3>
+
+                        <p>
+                            A consistent brand, and a content calendar that posts itself.
+                        </p>
+
+                        <ul>
+                            <li><b>Brand kit and media kit design</b> that makes you look professional and brand-deal ready</li>
+                            <li>Notion content calendars</li>
+                            <li>Canva graphics and templates</li>
+                            <li>Post scheduling, ready to publish</li>
+                            <li>Video editing and promotional reels</li>
                         </ul>
                     </article>
+
                 </div>
+
+                <p class="addon-note">
+                    <span class="addon-note-icon">🌐</span>
+                    <span><strong>Website development &amp; maintenance:</strong> a website that stays fresh, works on every
+                        device, and gets you leads. This covers content updates, simple landing pages, responsive design, and link and mobile testing.</span>
+                </p>
+
             </div>
+
         </section>
 
-        <!-- WORKFLOW SECTION -->
-        <section class="section section-light">
+        <!-- =====================================================
+             PORTFOLIO PREVIEW
+        ====================================================== -->
+
+        <section class="portfolio-preview section">
+
             <div class="container">
+
                 <div class="section-heading">
-                    <p class="eyebrow">MY APPROACH</p>
-                    <h2>A simple workflow for every task.</h2>
+
+                    <p class="eyebrow">
+                        MY WORK
+                    </p>
+
+                    <h2>
+                        See what I can do.
+                    </h2>
+
+                    <p>
+                        Explore my sample projects and see how I approach
+                        data management, research, organization, and
+                        administrative support.
+                    </p>
+
+                    <a href="portfolio.html" class="button button-primary">
+                        View My Portfolio
+                    </a>
+
                 </div>
-                <div class="workflow-grid">
-                    <div class="workflow-step"><span>01</span><h3>Understand</h3><p>Confirm the task, priorities, and deadline.</p></div>
-                    <div class="workflow-step"><span>02</span><h3>Organize</h3><p>Set up a clear structure before beginning.</p></div>
-                    <div class="workflow-step"><span>03</span><h3>Execute</h3><p>Complete the task carefully and consistently.</p></div>
-                    <div class="workflow-step"><span>04</span><h3>Review</h3><p>Double-check accuracy before anything goes out.</p></div>
-                    <div class="workflow-step"><span>05</span><h3>Deliver</h3><p>Hand over the finished work in an organized format.</p></div>
-                    <div class="workflow-step"><span>06</span><h3>Update</h3><p>Send a short summary so you know what's done.</p></div>
-                </div>
+
             </div>
+
         </section>
 
-        <!-- TOOLS SECTION -->
-        <section id="tools" class="section">
+
+        <!-- =====================================================
+             WORKFLOW
+        ====================================================== -->
+
+        <section class="workflow section section-light">
+
             <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        MY APPROACH
+                    </p>
+
+                    <h2>
+                        A simple workflow for every task.
+                    </h2>
+
+                </div>
+
+
+                <div class="workflow-grid">
+
+                    <div class="workflow-step">
+
+                        <span>01</span>
+
+                        <h3>
+                            Understand
+                        </h3>
+
+                        <p>
+                            Confirm the task, priorities, deadline, and preferred tools before starting.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-line"></div>
+
+
+                    <div class="workflow-step">
+
+                        <span>02</span>
+
+                        <h3>
+                            Organize
+                        </h3>
+
+                        <p>
+                            Set up a clear structure or checklist before beginning the work.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-line"></div>
+
+
+                    <div class="workflow-step">
+
+                        <span>03</span>
+
+                        <h3>
+                            Execute
+                        </h3>
+
+                        <p>
+                            Complete the task carefully, keeping formatting and naming consistent.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-line"></div>
+
+
+                    <div class="workflow-step">
+
+                        <span>04</span>
+
+                        <h3>
+                            Review
+                        </h3>
+
+                        <p>
+                            Double-check accuracy, links, and formatting before anything goes out.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-line"></div>
+
+
+                    <div class="workflow-step">
+
+                        <span>05</span>
+
+                        <h3>
+                            Deliver
+                        </h3>
+
+                        <p>
+                            Hand over the finished work in a clear, organized format.
+                        </p>
+
+                    </div>
+
+                    <div class="workflow-line"></div>
+
+                    <div class="workflow-step">
+
+                        <span>06</span>
+
+                        <h3>
+                            Update
+                        </h3>
+
+                        <p>
+                            Send a short end-of-day summary so you know what's done and what's next.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+     TOOLS
+====================================================== -->
+
+        <section id="tools" class="tools section">
+
+            <div class="container">
+
                 <div class="section-heading">
                     <p class="eyebrow">TOOLS</p>
                     <h2>Tools I work with</h2>
                 </div>
+
+
+                <!-- ADMIN -->
                 <div class="tool-category">
-                    <h3 class="tool-category-title">Admin & Organization</h3>
+
+                    <h3 class="tool-category-title">Admin</h3>
+
                     <div class="tools-grid">
-                        <div class="tool-card"><div class="tool-icon">📧</div><h3>Gmail</h3><p>Email organization and professional communication.</p></div>
-                        <div class="tool-card"><div class="tool-icon">📅</div><h3>Google Calendar</h3><p>Scheduling, planning, and calendar organization.</p></div>
-                        <div class="tool-card"><div class="tool-icon">📁</div><h3>Google Drive</h3><p>File storage, organization, sharing, and management.</p></div>
-                        <div class="tool-card"><div class="tool-icon">📝</div><h3>Microsoft Word</h3><p>Document creation, editing, and professional formatting.</p></div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📩</div>
+                            <h3>Gmail</h3>
+                            <p>
+                                Email organization, management,
+                                and professional communication.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📅</div>
+                            <h3>Google Calendar</h3>
+                            <p>
+                                Scheduling, planning, and
+                                calendar organization.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📁</div>
+                            <h3>Google Drive</h3>
+                            <p>
+                                File storage, organization,
+                                sharing, and management.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📄</div>
+                            <h3>Google Docs</h3>
+                            <p>
+                                Collaborative document creation,
+                                editing, and formatting.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📝</div>
+                            <h3>Microsoft Word</h3>
+                            <p>
+                                Document creation, editing,
+                                and professional formatting.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">💻</div>
+                            <h3>PowerPoint</h3>
+                            <p>
+                                Presentations and visual reports.
+                            </p>
+                        </div>
+
                     </div>
+
                 </div>
+
+
+                <!-- DATA & CRM -->
                 <div class="tool-category">
-                    <h3 class="tool-category-title">Data & Planning</h3>
+
+                    <h3 class="tool-category-title">Data &amp; CRM</h3>
+
                     <div class="tools-grid">
-                        <div class="tool-card"><div class="tool-icon">📊</div><h3>Microsoft Excel</h3><p>Data entry, cleaning, organization, and formulas.</p></div>
-                        <div class="tool-card"><div class="tool-icon">📌</div><h3>Trello</h3><p>Organizing tasks, tracking workflows, and managing projects.</p></div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📊</div>
+                            <h3>Microsoft Excel</h3>
+                            <p>
+                                Data entry, cleaning,
+                                organization, and formulas.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📈</div>
+                            <h3>Google Sheets</h3>
+                            <p>
+                                Spreadsheet management, data
+                                organization, and collaboration.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">💡</div>
+                            <h3>Zoho CRM</h3>
+                            <p>
+                                Basic CRM practice, contact
+                                organization, and record management.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">⚡</div>
+                            <h3>Zapier</h3>
+                            <p>
+                                Exploring workflow automation
+                                and app integrations.
+                            </p>
+                        </div>
+
                     </div>
+
                 </div>
+
+
+                <!-- PLANNING & CONTENT -->
                 <div class="tool-category">
-                    <h3 class="tool-category-title">Content & Design</h3>
+
+                    <h3 class="tool-category-title">
+                        Planning &amp; Content
+                    </h3>
+
                     <div class="tools-grid">
-                        <div class="tool-card"><div class="tool-icon">🎨</div><h3>Canva</h3><p>Creating and designing visual content, brand kits, and graphics.</p></div>
-                        <div class="tool-card"><div class="tool-icon">🎬</div><h3>CapCut</h3><p>Video editing, effects, transitions, and promotional reels.</p></div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">🗒️</div>
+                            <h3>Notion</h3>
+                            <p>
+                                Note-taking, task management,
+                                and project organization.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📌</div>
+                            <h3>Trello</h3>
+                            <p>
+                                Organizing tasks, tracking
+                                workflows, and managing projects.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">🎯</div>
+                            <h3>Asana</h3>
+                            <p>
+                                Task management, project tracking,
+                                and team collaboration.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">🎨</div>
+                            <h3>Canva</h3>
+                            <p>
+                                Creating and designing visual
+                                content and graphics.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">🎬</div>
+                            <h3>CapCut</h3>
+                            <p>Video editing, effects, and transitions.</p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">📹</div>
+                            <h3>Edits</h3>
+                            <p>Short-form video editing and content creation.</p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">🛍️</div>
+                            <h3>Gumroad</h3>
+                            <p>
+                                Digital product publishing
+                                and storefront management.
+                            </p>
+                        </div>
+
+                        <div class="tool-card">
+                            <div class="tool-icon">☕</div>
+                            <h3>Ko-fi</h3>
+                            <p>
+                                Digital product listings
+                                and creator storefront management.
+                            </p>
+                        </div>
+
                     </div>
+
                 </div>
+
+
+                <!-- ADDITIONAL SKILLS -->
+                <center>
+                    <p class="tools-note">
+                        <strong>Also:</strong> HTML, CSS, and GitHub for website development projects and maintenance.
+                    </p>
+                </center>
+
             </div>
+
         </section>
 
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="section section-light">
+
+        <!-- =====================================================
+             RESUME
+        ====================================================== -->
+
+        <section id="resume" class="resume section section-light">
+
+            <div class="container resume-container">
+
+                <div class="resume-content">
+
+                    <p class="eyebrow">
+                        RESUME
+                    </p>
+
+                    <h2>
+                        Want to know more about my experience?
+                    </h2>
+
+                    <p>
+                        Take a look at my resume for a quick overview
+                        of my skills, education, tools, and experience.
+                    </p>
+
+                    <a href="files/Mehwish-Asghar-Resume.pdf" class="button button-primary" download>
+                        Download Resume
+                    </a>
+
+                </div>
+
+
+                <div class="resume-preview">
+
+                    <div class="resume-paper">
+
+                        <img src="images/resume-preview.jpg" alt="Resume preview image">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section id="contact" class="contact section">
+
             <div class="container contact-container">
+
                 <div class="contact-content">
-                    <p class="eyebrow">CONTACT</p>
-                    <h2>Let's work together.</h2>
-                    <p>Tell me what’s taking up your time, and I’ll reply within 24 hours to discuss how I can help streamline your business.</p>
+
+                    <p class="eyebrow">
+                        CONTACT
+                    </p>
+
+                    <h2>
+                        Let's work together.
+                    </h2>
+
+                    <p>
+                        Tell me what's taking up your time, and I'll reply within 24 hours.
+                        Prefer to talk first? Book a free 15-minute call with me using Calendly.
+                    </p>
+
                     <div class="contact-details">
+
                         <div>
                             <span>Email</span>
-                            <a href="mailto:mehwishasghar958@gmail.com">mehwishasghar958@gmail.com</a>
+
+                            <a href="mailto:mehwishasghar958@gmail.com">
+                                mehwishasghar958@gmail.com
+                            </a>
                         </div>
+
                         <div>
                             <span>Location</span>
-                            <p>Pakistan</p>
+
+                            <p>
+                                Pakistan (UTC+5)
+                            </p>
                         </div>
+
                         <div>
                             <span>Availability</span>
-                            <p>Open to Full-time, Part-time, & Freelance Remote Work</p>
+
+                            <p>
+                                Open to Full-time, Part-time, &amp; Freelance Opportunities
+                            </p>
                         </div>
+
                         <div>
                             <span>Let's Connect</span>
-                            <a href="https://www.instagram.com/12___________mimi46?dlrf=MTk2ejZlanU2ZXNyZQ==" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</a>
+
+                            <a href="https://www.instagram.com/12___________mimi46" target="_blank" rel="noopener noreferrer">
+                                Instagram
+                            </a>
+                            • <a href="https://www.linkedin.com/in/mehwish-asghar-aba1ba385/" target="_blank" rel="noopener noreferrer">
+                                LinkedIn
+                            </a>
+                            • <a href="https://calendly.com/mehwishasghar958/new-meeting" target="_blank" rel="noopener noreferrer">
+                                Calendly
+                            </a>
                         </div>
+
                     </div>
+
                 </div>
-                <form class="contact-form" id="contact-form" action="https://formspree.io/f/xljbjjay" method="POST">
-                    <!-- Formspree options: subject for the notification email, and a hidden spam trap -->
-                    <input type="hidden" name="_subject" value="New Virtual Assistant inquiry from your website">
-                    <input type="text" name="_gotcha" style="display: none" tabindex="-1" autocomplete="off">
-                    <h3>Ready to get your time back?</h3>
-                    <p>Fill this in and I'll get back to you within 24 hours.</p>
 
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your name" required>
 
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
-                    <label for="help">What do you need help with?</label>
-                    <select id="help" name="help" required>
-                        <option value="Inbox & Admin Management">Inbox & Admin Management</option>
-                        <option value="CRM & customer records" selected>CRM & customer records</option>
-                        <option value="Content & Brand Support">Content & Brand Support</option>
-                        <option value="Excel & Data Organization">Excel & Data Organization</option>
-                        <option value="Other">Other</option>
-                    </select>
+                <!-- =================================================
+                     FORMSPREE FORM (Basic HTML integration)
+                     Endpoint: https://formspree.io/f/mnpdpojw
+                ================================================== -->
+                <form class="contact-form" action="https://formspree.io/f/mnpdpojw" method="POST">
+                    <input type="hidden" name="_subject" value="New Portfolio Inquiry — Mehwish Asghar">
 
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Tell me what's taking up your time..." required></textarea>
+                    <!-- Name -->
+                    <div class="form-group">
+                        <label for="name">Name</label>
 
-                    <button type="submit" class="button button-primary">Send Message</button>
-                    <p class="form-status" id="form-status" role="status"></p>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <!-- What do you need help with? -->
+                    <div class="form-group">
+                        <label id="subject-label" for="subject-btn">
+                            What do you need help with?
+                        </label>
+
+                        <div class="custom-select">
+
+                            <!-- Formspree collects this hidden input -->
+                            <input type="hidden" name="service" id="service" value="" required>
+
+                            <button type="button" id="subject-btn" class="select-trigger" aria-haspopup="listbox"
+                                aria-expanded="false" aria-labelledby="subject-label subject-btn">
+                                <span class="select-value">
+                                    Choose a service
+                                </span>
+                            </button>
+
+                            <ul class="select-menu" role="listbox" aria-labelledby="subject-label">
+                                <li role="option" aria-selected="false">
+                                    Inbox, calendar &amp; file management
+                                </li>
+
+                                <li role="option" aria-selected="false">
+                                    CRM &amp; customer records
+                                </li>
+
+                                <li role="option" aria-selected="false">
+                                    Spreadsheets, data, research &amp; systems
+                                </li>
+
+                                <li role="option" aria-selected="false">
+                                    Content, brand kits &amp; creator support
+                                </li>
+
+                                <li role="option" aria-selected="false">
+                                    Website development &amp; maintenance
+                                </li>
+
+                                <li role="option" aria-selected="false">
+                                    Something else / not sure yet
+                                </li>
+                            </ul>
+                        </div>
+
+                        <p class="field-error" hidden>
+                            Please choose a service.
+                        </p>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="form-group">
+                        <label for="message">Message</label>
+
+                        <textarea id="message" name="message" rows="6"
+                            placeholder="Tell me a little about what you need help with..." required></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" class="button button-primary">
+                        Send Message
+                    </button>
+
                 </form>
+
+
             </div>
+
         </section>
+
     </main>
 
-    <!-- FOOTER -->
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
     <footer class="footer">
+
         <div class="container footer-container">
+
             <div>
-                <a href="#home" class="logo">Mehwish</a>
-                <p>Professional Virtual Assistant for Creators and Online Businesses</p>
+
+                <a href="#home" class="logo">
+                    Mehwish Asghar
+                </a>
+
+                <p>
+                    Admin &amp; Operations VA for Creators and Online Businesses
+                </p>
+
             </div>
+
+
             <div class="footer-links">
+
                 <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
+                <a href="portfolio.html">Portfolio</a>
                 <a href="#contact">Contact</a>
-                <a href="https://www.instagram.com/12___________mimi46?dlrf=MTk2ejZlanU2ZXNyZQ==" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</a>
+                <a href="https://www.instagram.com/12___________mimi46" target="_blank" rel="noopener noreferrer">
+                    Instagram
+                </a>
+                <a href="https://www.linkedin.com/in/mehwish-asghar-aba1ba385/" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+                <a href="https://calendly.com/mehwishasghar958/new-meeting" target="_blank" rel="noopener noreferrer">
+                    Book a Call
+                </a>
             </div>
-            <p class="copyright">© 2026 Mehwish. All rights reserved.</p>
+
+
+            <p class="copyright">
+                © 2026 Mehwish Asghar. All rights reserved.
+            </p>
+
         </div>
+
     </footer>
 
+    <!-- Mobile menu toggle -->
     <script>
-        // The form posts directly to Formspree, which shows its own "Thank you" page after submission.
+        (function () {
+            const button = document.querySelector(".menu-button");
+            const nav = document.getElementById("main-nav");
+            if (!button || !nav) return;
+
+            const setOpen = (open) => {
+                nav.classList.toggle("open", open);
+                button.setAttribute("aria-expanded", open);
+                button.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+                button.textContent = open ? "✕" : "☰";
+            };
+
+            button.addEventListener("click", (e) => {
+                e.stopPropagation();
+                setOpen(!nav.classList.contains("open"));
+            });
+
+            nav.addEventListener("click", (e) => {
+                if (e.target.closest("a")) setOpen(false);
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!nav.contains(e.target) && !button.contains(e.target)) setOpen(false);
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") setOpen(false);
+            });
+
+            window.matchMedia("(min-width: 651px)").addEventListener("change", (e) => {
+                if (e.matches) setOpen(false);
+            });
+        })();
+    </script>
+
+
+    <!-- Contact form custom dropdown -->
+    <script>
+        (function () {
+            const form = document.querySelector(".contact-form");
+            const select = document.querySelector(".custom-select");
+
+            if (!form || !select) return;
+
+            const trigger = select.querySelector(".select-trigger");
+            const label = select.querySelector(".select-value");
+            const input = select.querySelector('input[name="service"]');
+            const options = [...select.querySelectorAll('[role="option"]')];
+            const error = select.parentElement.querySelector(".field-error");
+
+            let active = -1;
+
+            const highlight = () => {
+                options.forEach((option, index) => {
+                    option.classList.toggle("active", index === active);
+                });
+            };
+
+            const setOpen = (open) => {
+                select.classList.toggle("open", open);
+                trigger.setAttribute("aria-expanded", String(open));
+
+                if (open) {
+                    active = Math.max(
+                        options.findIndex(
+                            option => option.getAttribute("aria-selected") === "true"
+                        ),
+                        0
+                    );
+
+                    highlight();
+                }
+            };
+
+            const choose = (index) => {
+                if (!options[index]) return;
+
+                const selectedService = options[index].textContent.trim();
+
+                options.forEach(option => {
+                    option.setAttribute("aria-selected", "false");
+                });
+
+                options[index].setAttribute("aria-selected", "true");
+
+                label.textContent = selectedService;
+
+                input.value = selectedService;
+
+                select.classList.add("has-value");
+                select.classList.remove("invalid");
+
+                error.hidden = true;
+
+                setOpen(false);
+
+                trigger.focus();
+            };
+
+            trigger.addEventListener("click", () => {
+                setOpen(!select.classList.contains("open"));
+            });
+
+            trigger.addEventListener("keydown", (event) => {
+                const isOpen = select.classList.contains("open");
+
+                if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+                    event.preventDefault();
+
+                    if (!isOpen) {
+                        setOpen(true);
+                        return;
+                    }
+
+                    const direction = event.key === "ArrowDown" ? 1 : -1;
+
+                    active = (
+                        active + direction + options.length
+                    ) % options.length;
+
+                    highlight();
+
+                } else if (
+                    (event.key === "Enter" || event.key === " ") &&
+                    isOpen
+                ) {
+                    event.preventDefault();
+
+                    choose(active);
+
+                } else if (event.key === "Escape") {
+                    setOpen(false);
+                }
+            });
+
+            trigger.addEventListener("keyup", (event) => {
+                if (event.key === " ") {
+                    event.preventDefault();
+                }
+            });
+
+            options.forEach((option, index) => {
+                option.addEventListener("click", () => {
+                    choose(index);
+                });
+            });
+
+            document.addEventListener("click", (event) => {
+                if (!select.contains(event.target)) {
+                    setOpen(false);
+                }
+            });
+
+            form.addEventListener("submit", (event) => {
+
+                if (!input.value.trim()) {
+                    event.preventDefault();
+
+                    select.classList.add("invalid");
+                    error.hidden = false;
+
+                    trigger.focus();
+
+                    return;
+                }
+
+                input.value = input.value.trim();
+
+            });
+
+        })();
     </script>
 
 </body>
+
 </html>
